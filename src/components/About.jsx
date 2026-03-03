@@ -24,7 +24,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <p className="text-[#8771ff] font-semibold text-sm uppercase tracking-widest mb-4">Sobre nosotros</p>
+          <p className="text-[#ff931f] font-semibold text-sm uppercase tracking-widest mb-4">Sobre nosotros</p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6">
             El juego que transforma<br />
             <span className="text-gradient">la forma de conectar</span>
@@ -41,8 +41,8 @@ export default function About() {
               key={i}
               className="card-hover p-8 rounded-2xl border border-white/10 bg-white/[0.03] flex flex-col gap-5"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#5235ef]/20 flex items-center justify-center">
-                <p.icon size={24} className="text-[#8771ff]" />
+              <div className="w-12 h-12 rounded-xl bg-[#ff931f]/20 flex items-center justify-center">
+                <p.icon size={24} className="text-[#ff931f]" />
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">{p.title}</h3>
@@ -61,7 +61,7 @@ export default function About() {
             { value: '+10k', label: 'Participantes' },
           ].map((s, i) => (
             <div key={i} className="text-center p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
-              <p className="text-4xl font-black text-[#8771ff] mb-1">{s.value}</p>
+              <p className="text-4xl font-black text-[#ff931f] mb-1">{s.value}</p>
               <p className="text-sm text-white/50">{s.label}</p>
             </div>
           ))}

@@ -1,4 +1,7 @@
+import { useState } from 'react'
 import { Instagram, Linkedin, Twitter } from 'lucide-react'
+
+const LOGO_IMAGE = '/images/stand-logo.png'
 
 const navLinks = [
   { label: 'Sobre nosotros', href: '#about' },
@@ -29,6 +32,8 @@ export default function Footer() {
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const [logoError, setLogoError] = useState(false)
+
   return (
     <footer className="border-t border-white/10 py-12 px-6">
       <div className="max-w-6xl mx-auto">
@@ -39,8 +44,17 @@ export default function Footer() {
               onClick={() => scrollTo('#')}
               className="flex items-center gap-2 group w-fit"
             >
-              <div className="w-8 h-8 rounded-lg bg-[#5235ef] flex items-center justify-center font-black text-white text-lg group-hover:bg-[#ff931f] transition-colors">
-                S
+              <div className="w-8 h-8 flex items-center justify-center overflow-hidden shrink-0">
+                {!logoError ? (
+                  <img
+                    src={LOGO_IMAGE}
+                    alt="Stand"
+                    className="w-full h-full object-contain"
+                    onError={() => setLogoError(true)}
+                  />
+                ) : (
+                  <span className="font-black text-white text-lg">S</span>
+                )}
               </div>
               <span className="font-extrabold text-xl tracking-tight text-white">Stand</span>
             </button>
@@ -55,7 +69,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-[#5235ef] transition-colors"
+                  className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-[#ff931f] transition-colors"
                 >
                   <Icon size={16} />
                 </a>
@@ -104,7 +118,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Stand. Todos los derechos reservados.
           </p>
           <p className="text-xs text-white/20">
-            Hecho con 💜 en España
+            Hecho con 🧡 en España
           </p>
         </div>
       </div>

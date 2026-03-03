@@ -8,9 +8,12 @@ const links = [
   { label: 'Contacto', href: '#contact' },
 ]
 
+const LOGO_IMAGE = '/images/stand-logo.png'
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [logoError, setLogoError] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -30,10 +33,19 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" onClick={(e) => handleLink(e, '#')} className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-[#5235ef] flex items-center justify-center font-black text-white text-lg group-hover:bg-[#ff931f] transition-colors">
-            S
+          <div className="w-8 h-8 flex items-center justify-center overflow-hidden shrink-0">
+            {!logoError ? (
+              <img
+                src={LOGO_IMAGE}
+                alt="Stand"
+                className="w-full h-full object-contain"
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <span className="font-black text-white text-lg">S</span>
+            )}
           </div>
-          <span className="font-extrabold text-xl tracking-tight text-white">Stand</span>
+          <span className="font-extrabold text-xl tracking-tight text-white">stand</span>
         </a>
 
         {/* Desktop links */}
@@ -55,7 +67,7 @@ export default function Navbar() {
         <a
           href="#contact"
           onClick={(e) => handleLink(e, '#contact')}
-          className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-[#5235ef] hover:bg-[#ff931f] text-white text-sm font-semibold transition-colors duration-200"
+          className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-[#ff931f] hover:bg-[#e67e0f] text-white text-sm font-semibold transition-colors duration-200"
         >
           Solicitar demo
         </a>
@@ -89,7 +101,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleLink(e, '#contact')}
-            className="mt-6 block text-center px-5 py-3 rounded-full bg-[#5235ef] hover:bg-[#ff931f] text-white font-semibold transition-colors"
+            className="mt-6 block text-center px-5 py-3 rounded-full bg-[#ff931f] hover:bg-[#e67e0f] text-white font-semibold transition-colors"
           >
             Solicitar demo
           </a>
