@@ -47,24 +47,26 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button
-            onClick={() => scrollTo('#catalog')}
+          <a
+            href="https://playstand.app/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ff931f] hover:bg-[#e67e0f] text-white font-bold text-base transition-colors duration-200 shadow-lg shadow-[#ff931f]/30"
           >
-            Ver catálogo
+            Pruébalo gratis
             <ArrowRight size={18} />
-          </button>
+          </a>
           <button
-            onClick={() => scrollTo('#contact')}
+            onClick={() => scrollTo('#catalog')}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 hover:border-[#ff931f] text-white font-semibold text-base transition-colors duration-200"
           >
-            Solicitar demo
+            Ver catálogo
           </button>
         </div>
 
         {/* Social proof */}
         <p className="mt-12 text-sm text-white/30">
-          Más de <span className="text-white/60 font-semibold">50 empresas</span> ya confían en Stand
+          En fase de pilotos con empresas pioneras
         </p>
       </div>
 

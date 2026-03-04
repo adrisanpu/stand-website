@@ -65,11 +65,12 @@ export default function Navbar() {
 
         {/* CTA desktop */}
         <a
-          href="#contact"
-          onClick={(e) => handleLink(e, '#contact')}
+          href="https://playstand.app/login"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-[#ff931f] hover:bg-[#e67e0f] text-white text-sm font-semibold transition-colors duration-200"
         >
-          Solicitar demo
+          Pruébalo gratis
         </a>
 
         {/* Mobile burger */}
@@ -99,11 +100,12 @@ export default function Navbar() {
             ))}
           </ul>
           <a
-            href="#contact"
-            onClick={(e) => handleLink(e, '#contact')}
+            href="https://playstand.app/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 block text-center px-5 py-3 rounded-full bg-[#ff931f] hover:bg-[#e67e0f] text-white font-semibold transition-colors"
           >
-            Solicitar demo
+            Pruébalo gratis
           </a>
         </div>
       )}

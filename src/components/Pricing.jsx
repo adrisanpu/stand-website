@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import { Check } from 'lucide-react'
 
+// App URL that starts checkout (same flow as backend: POST /v1/billing/checkout then redirect to Stripe).
+// Default: playstand.app/billing/checkout. Override with VITE_STRIPE_EVENT_CHECKOUT_URL for other environments.
+const STRIPE_EVENT_CHECKOUT_URL = import.meta.env.VITE_STRIPE_EVENT_CHECKOUT_URL || 'https://playstand.app/billing/checkout'
+const LOGIN_URL = 'https://playstand.app/login'
+
 const plans = [
   {
     name: 'Starter',
@@ -214,18 +219,38 @@ export default function Pricing() {
                 </div>
               )}
 
-              <button
-                onClick={scrollToContact}
-                className={`w-full py-3 rounded-xl font-bold text-sm transition-colors duration-200 ${
-                  plan.enterprise
-                    ? 'bg-[#ff931f] hover:bg-[#e67e0f] text-white shadow-lg shadow-[#ff931f]/30'
-                    : plan.highlight
-                    ? 'bg-[#ff931f] hover:bg-[#e67e0f] text-white shadow-lg shadow-[#ff931f]/30'
-                    : 'bg-white/10 hover:bg-white/15 text-white border border-white/20'
-                }`}
-              >
-                {plan.cta}
-              </button>
+              {plan.cta === 'Probar GRATIS' ? (
+                <a
+                  href={LOGIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 rounded-xl font-bold text-sm transition-colors duration-200 bg-white/10 hover:bg-white/15 text-white border border-white/20 text-center block"
+                >
+                  {plan.cta}
+                </a>
+              ) : plan.highlight && STRIPE_EVENT_CHECKOUT_URL ? (
+                <a
+                  href={STRIPE_EVENT_CHECKOUT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 rounded-xl font-bold text-sm transition-colors duration-200 bg-[#ff931f] hover:bg-[#e67e0f] text-white shadow-lg shadow-[#ff931f]/30 text-center block"
+                >
+                  {plan.cta}
+                </a>
+              ) : (
+                <button
+                  onClick={scrollToContact}
+                  className={`w-full py-3 rounded-xl font-bold text-sm transition-colors duration-200 ${
+                    plan.enterprise
+                      ? 'bg-[#ff931f] hover:bg-[#e67e0f] text-white shadow-lg shadow-[#ff931f]/30'
+                      : plan.highlight
+                      ? 'bg-[#ff931f] hover:bg-[#e67e0f] text-white shadow-lg shadow-[#ff931f]/30'
+                      : 'bg-white/10 hover:bg-white/15 text-white border border-white/20'
+                  }`}
+                >
+                  {plan.cta}
+                </button>
+              )}
             </div>
           ))}
         </div>

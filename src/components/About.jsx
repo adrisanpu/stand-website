@@ -1,4 +1,4 @@
-import { Zap, Users, Trophy } from 'lucide-react'
+import { Zap, Users, Trophy, Contact } from 'lucide-react'
 
 const pillars = [
   {
@@ -10,6 +10,11 @@ const pillars = [
     icon: Users,
     title: 'Experiencias a medida',
     description: 'Adaptamos cada juego a tu marca, sector y objetivos. Desde formación interna hasta activaciones en ferias.',
+  },
+  {
+    icon: Contact,
+    title: 'Leads y contactos',
+    description: 'Captura datos y contactos de quienes participan en tu stand. Formularios integrados y exportación para seguir vendiendo después del evento.',
   },
   {
     icon: Trophy,
@@ -30,12 +35,12 @@ export default function About() {
             <span className="text-gradient">la forma de conectar</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed">
-            Stand es la plataforma de gamificación para eventos corporativos y de marca. Llevamos la experiencia de juego a cualquier contexto profesional: ferias, convenciones, formaciones y activaciones.
+            Conectamos marcas con su público a través del juego. Nuestro objetivo: que cada persona que pase por tu stand viva una experiencia memorable y que tú puedas medir el impacto y captar leads para seguir vendiendo.
           </p>
         </div>
 
         {/* Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((p, i) => (
             <div
               key={i}
@@ -52,20 +57,9 @@ export default function About() {
           ))}
         </div>
 
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { value: '+50', label: 'Empresas clientes' },
-            { value: '+200', label: 'Eventos realizados' },
-            { value: '98%', label: 'Satisfacción' },
-            { value: '+10k', label: 'Participantes' },
-          ].map((s, i) => (
-            <div key={i} className="text-center p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
-              <p className="text-4xl font-black text-[#ff931f] mb-1">{s.value}</p>
-              <p className="text-sm text-white/50">{s.label}</p>
-            </div>
-          ))}
-        </div>
+        <p className="mt-16 text-center text-white/40 text-sm">
+          Estamos en fase de pilotos con empresas pioneras.
+        </p>
       </div>
     </section>
   )

@@ -80,6 +80,10 @@ export default function Catalog() {
           </p>
         </div>
 
+        <p className="text-center text-white/40 text-sm mb-4 md:mb-6">
+          Desliza para ver todos los juegos →
+        </p>
+
         {/* Cards: horizontal scroll */}
         <div className="relative -mx-6 px-6">
           <div className="flex gap-6 overflow-x-auto overflow-y-hidden pb-4 scroll-smooth snap-x snap-mandatory scrollbar-thin scrollbar-track-white/5 scrollbar-thumb-white/20">
@@ -87,6 +91,7 @@ export default function Catalog() {
               <CatalogCard key={i} exp={exp} />
             ))}
           </div>
+          <div className="absolute right-0 top-0 bottom-4 w-16 bg-gradient-to-l from-[#101011] to-transparent pointer-events-none" aria-hidden />
         </div>
       </div>
     </section>
