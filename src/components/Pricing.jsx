@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { Check } from 'lucide-react'
 
-// App URL that starts checkout (same flow as backend: POST /v1/billing/checkout then redirect to Stripe).
-// Default: playstand.app/billing/checkout. Override with VITE_STRIPE_EVENT_CHECKOUT_URL for other environments.
-const STRIPE_EVENT_CHECKOUT_URL = import.meta.env.VITE_STRIPE_EVENT_CHECKOUT_URL || 'https://playstand.app/billing/checkout'
+// App URL that starts checkout (POST /v1/billing/checkout then redirect to Stripe)
+const CHECKOUT_APP_URL = 'https://playstand.app/billing/checkout'
 const LOGIN_URL = 'https://playstand.app/login'
 
 const plans = [
@@ -15,11 +14,10 @@ const plans = [
     priceNote: 'No necesitas tarjeta. Configuración en menos de 5 minutos.',
     features: [
       'Acceso a la plataforma',
-      'Configuración básica',
       '1 juego activo',
-      'Personalización visual básica',
       'Hasta 25 jugadores',
-      'Validación de partidas',
+      'Configuración básica',
+      'Personalización visual básica',
       'Vista previa de resultados',
     ],
     cta: 'Probar GRATIS',
@@ -40,7 +38,6 @@ const plans = [
       'Jugadores ilimitados',
       'Configuración rápida del evento',
       'Personalización visual del juego',
-      'Validación de partidas en tiempo real',
       'Realización de sorteos',
       'Formularios para jugadores',
       'Vista y exportación básica de resultados',
@@ -56,19 +53,14 @@ const plans = [
     priceModularNote: 'Precio base. Al añadir servicios opcionales el importe aumenta.',
     tryFree: true,
     features: [
-      'Acceso completo a la plataforma',
-      'Configuración completa del evento',
-      'Personalización visual y de contenidos',
-      'Juegos y dinámicas a medida',
-      'Soporte técnico dedicado',
-      'Acompañamiento antes, durante y después del evento',
+      'Todo lo incluido en el plan Event',
     ],
     servicesTitle: 'Servicios a escoger:',
     services: [
-      'Diseño visual personalizado (branding completo)',
-      'Adaptación de contenidos y mecánicas de juego',
       'Pantallas táctiles e instalaciones interactivas',
       'Logística y transporte al evento',
+      'Diseño visual personalizado (branding completo)',
+      'Adaptación de contenidos y mecánicas de juego',
       'Analítica de datos post-evento',
       'Personal on-site',
       'Merchandising y premios personalizados',
@@ -144,7 +136,7 @@ export default function Pricing() {
               {plan.highlight && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="px-4 py-1.5 rounded-full bg-[#ff931f] text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-[#ff931f]/40">
-                    Más popular
+                    popular
                   </span>
                 </div>
               )}
@@ -195,12 +187,17 @@ export default function Pricing() {
               </div>
 
               <ul className="flex flex-col gap-3 flex-1">
-                {plan.features.map((f, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm text-white/70">
-                    <Check size={16} className="mt-0.5 shrink-0 text-[#ff931f]" />
-                    {f}
-                  </li>
-                ))}
+                {plan.features.map((f, j) => {
+                  const text = plan.priceDay != null && billingPeriod === 'week' && f === 'Acceso completo durante 24h'
+                    ? 'Acceso completo durante 7 días'
+                    : f
+                  return (
+                    <li key={j} className="flex items-start gap-3 text-sm text-white/70">
+                      <Check size={16} className="mt-0.5 shrink-0 text-[#ff931f]" />
+                      {text}
+                    </li>
+                  )
+                })}
               </ul>
 
               {plan.enterprise && plan.servicesTitle && (
@@ -228,9 +225,9 @@ export default function Pricing() {
                 >
                   {plan.cta}
                 </a>
-              ) : plan.highlight && STRIPE_EVENT_CHECKOUT_URL ? (
+              ) : plan.highlight ? (
                 <a
-                  href={STRIPE_EVENT_CHECKOUT_URL}
+                  href={CHECKOUT_APP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl font-bold text-sm transition-colors duration-200 bg-[#ff931f] hover:bg-[#e67e0f] text-white shadow-lg shadow-[#ff931f]/30 text-center block"

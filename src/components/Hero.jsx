@@ -13,39 +13,44 @@ export default function Hero() {
     >
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#ff931f]/20 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#ff931f]/10 blur-[100px]" />
-        <div className="absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-[#ff931f]/10 blur-[80px]" />
+        <div className="hero-bg-float-1 absolute top-1/4 left-1/2 w-[600px] h-[600px] rounded-full bg-[#ff931f]/20 blur-[120px]" />
+        <div className="hero-bg-float-2 absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#ff931f]/10 blur-[100px]" />
+        <div className="hero-bg-float-3 absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-[#ff931f]/10 blur-[80px]" />
       </div>
 
       {/* Geometric shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 right-12 w-24 h-24 border border-[#ff931f]/30 rounded-2xl rotate-12 opacity-60" />
-        <div className="absolute bottom-32 left-10 w-16 h-16 border border-[#ff931f]/30 rounded-xl -rotate-6 opacity-50" />
-        <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-[#ff931f]/30 rounded-full opacity-60" />
-        <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-[#ff931f]/40 rounded-full opacity-70" />
+        <div className="hero-shape-drift-12 absolute top-20 right-12 w-24 h-24 border border-[#ff931f]/30 rounded-2xl opacity-60" />
+        <div className="hero-shape-drift-neg6 absolute bottom-32 left-10 w-16 h-16 border border-[#ff931f]/30 rounded-xl opacity-50" />
+        <div className="hero-dot-drift absolute top-1/2 right-1/4 w-8 h-8 bg-[#ff931f]/30 rounded-full opacity-60" />
+        <div className="hero-dot-drift absolute top-1/3 left-1/4 w-4 h-4 bg-[#ff931f]/40 rounded-full opacity-70" style={{ animationDelay: '-4s' }} />
+      </div>
+
+      {/* Pantallas de fondo: horizontal izquierda, vertical derecha */}
+      <div className="absolute inset-0 pointer-events-none flex items-center">
+        <img
+          src="/images/pantalla_horizontal.png"
+          alt=""
+          className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[15%] max-h-[70vh] w-auto object-contain object-left opacity-60"
+        />
+        <img
+          src="/images/pantalla_vertical.png"
+          alt=""
+          className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-[15%] max-h-[70vh] w-auto object-contain object-right opacity-60"
+        />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#ff931f]/40 bg-[#ff931f]/10 text-sm font-medium text-[#ff931f] mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#ff931f] animate-pulse" />
-          Experiencias gamificadas para marcas
-        </div>
-
-        {/* Main headline */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight mb-6">
           <span className="text-white">Transforma tus</span>
           <br />
           <span className="text-gradient">eventos en juego</span>
         </h1>
 
-        {/* Subheadline */}
         <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
           Stand crea experiencias gamificadas únicas para eventos corporativos, ferias y activaciones de marca. Trivials, ruletas, retos y mucho más.
         </p>
 
-        {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="https://playstand.app/login"
@@ -64,9 +69,8 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Social proof */}
         <p className="mt-12 text-sm text-white/30">
-          En fase de pilotos con empresas pioneras
+          Proyecto en busca de pilotos.
         </p>
       </div>
 

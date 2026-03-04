@@ -58,7 +58,7 @@ export default function About() {
         </div>
 
         <p className="mt-16 text-center text-white/40 text-sm">
-          Estamos en fase de pilotos con empresas pioneras.
+          Proyecto en busca de pilotos.
         </p>
       </div>
     </section>
