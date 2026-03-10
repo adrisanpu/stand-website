@@ -56,10 +56,6 @@ export default function About() {
             </div>
           ))}
         </div>
-
-        <p className="mt-16 text-center text-white/40 text-sm">
-          Proyecto en busca de pilotos.
-        </p>
       </div>
     </section>
   )

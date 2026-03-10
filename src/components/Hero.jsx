@@ -31,12 +31,12 @@ export default function Hero() {
         <img
           src="/images/pantalla_horizontal.png"
           alt=""
-          className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[15%] max-h-[70vh] w-auto object-contain object-left opacity-60"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[15%] max-h-[35vh] md:max-h-[70vh] w-auto object-contain object-left opacity-50 md:opacity-60"
         />
         <img
           src="/images/pantalla_vertical.png"
           alt=""
-          className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-[15%] max-h-[70vh] w-auto object-contain object-right opacity-60"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[15%] max-h-[35vh] md:max-h-[70vh] w-auto object-contain object-right opacity-50 md:opacity-60"
         />
       </div>
 

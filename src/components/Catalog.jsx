@@ -7,7 +7,7 @@ const experiences = [
     image: '/images/l3tras-logo.png',
     tag: 'Ingenio & Velocidad',
     title: 'L3tras',
-    description: 'Se muestra una palabra objetivo y los jugadores usan las letras de sus códigos (o de la partida) para formar esa palabra. Quien lo consiga antes o con más aciertos gana. Juego de ingenio y velocidad, con ranking opcional.',
+    description: 'Forma la palabra objetivo con tus letras antes que el resto. Ingenio y velocidad con ranking opcional.',
     color: '#ff931f',
   },
   {
@@ -15,7 +15,7 @@ const experiences = [
     image: '/images/ruleta-logo.png',
     tag: 'Suerte & Premio',
     title: 'Rulet4',
-    description: 'Ruleta de premios o acciones personalizable para el evento. El organizador configura opciones y la ruleta decide quién gana o qué reto toca. Puede usarse para sorteos, dinámicas o simplemente animar el público. Multijugador en formato sala.',
+    description: 'Ruleta de premios o retos personalizable. Sorteos, dinámicas o animar al público en formato sala.',
     color: '#ff931f',
   },
   {
@@ -23,7 +23,7 @@ const experiences = [
     image: '/images/t1mer-logo.png',
     tag: 'Precisión',
     title: 'T1mer',
-    description: 'Los jugadores deben pulsar o actuar en el momento exacto que indica el temporizador. Prueba de reflejos y precisión. Puede ser individual o en sala compitiendo por el mejor tiempo. Competitivo y con ranking.',
+    description: 'Pulsa en el momento exacto que marca el temporizador. Prueba de reflejos; individual o en sala con ranking.',
     color: '#ff931f',
   },
   {
@@ -31,7 +31,7 @@ const experiences = [
     image: '/images/empareja2-logo.png',
     tag: 'Networking',
     title: 'Empareja2',
-    description: 'Cada jugador tiene una pareja asignada por el sistema. El reto es encontrarla en la sala e intercambiar los códigos de validación. Gana la pareja que se valide correctamente. Perfecto para dinámicas de networking y que la gente se mueva y hable.',
+    description: 'Encuentra a tu pareja asignada en la sala e intercambiad códigos. Ideal para networking y que la gente se mueva.',
     color: '#ff931f',
   },
   {
@@ -39,7 +39,7 @@ const experiences = [
     image: '/images/cupido-logo.png',
     tag: 'Social',
     title: 'Cupido',
-    description: 'Empareja a participantes según sus respuestas a un cuestionario. Cada uno ve un semáforo (rojo/amarillo/verde) que indica compatibilidad. El objetivo es encontrar a tu pareja asignada y validar el código entre los dos. Muy social y pensado para eventos.',
+    description: 'Empareja por cuestionario; semáforo de compatibilidad. Encuentra a tu pareja y validad el código. Muy social.',
     color: '#ff931f',
   },
   {
@@ -47,7 +47,7 @@ const experiences = [
     image: '/images/semaforo-logo.png',
     tag: 'Romper el hielo',
     title: 'Semáforo',
-    description: 'Los jugadores se clasifican en Casado (rojo), Puede ser (amarillo) o Soltero (verde). Tras validar la pareja, un quiz cruzado pone a prueba si os conocéis bien. Ideal para eventos en vivo donde quieras romper el hielo y que la gente se mezcle según su estado.',
+    description: 'Rojo/amarillo/verde según estado. Quiz cruzado para ver si os conocéis. Romper el hielo en eventos.',
     color: '#ff931f',
   },
   {
@@ -55,7 +55,7 @@ const experiences = [
     image: '/images/infocards-logo.png',
     tag: 'Presentación',
     title: 'Info Cards',
-    description: 'Muestra información sobre tu producto, servicio o marca en una secuencia de tarjetas visuales. Sube un PDF, texto o imágenes y la IA genera las tarjetas automáticamente. Ideal para ferias y eventos.',
+    description: 'Tarjetas visuales con tu información. Sube PDF o imágenes y la IA genera las tarjetas. Para ferias y presentaciones.',
     color: '#ff931f',
   },
 ]
@@ -104,43 +104,44 @@ function CatalogCard({ exp }) {
 
   return (
     <div
-      className="card-hover group p-6 rounded-2xl border border-white/10 bg-white/[0.03] flex flex-col gap-4 min-w-[280px] max-w-[320px] shrink-0 snap-start"
+      className="card-hover group relative p-6 rounded-2xl border border-white/10 bg-white/[0.03] flex flex-col h-[300px] min-w-[280px] max-w-[320px] shrink-0 snap-start overflow-hidden"
     >
-      <div className="flex items-start justify-between gap-3">
-        <div
-          className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden shrink-0"
-          style={{ backgroundColor: `${exp.color}15` }}
-        >
-          {showImage ? (
-            <img
-              src={exp.image}
-              alt=""
-              className="w-full h-full object-contain p-1"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <exp.icon size={28} style={{ color: exp.color }} />
-          )}
-        </div>
-        <span
-          className="px-3 py-1 rounded-full text-xs font-semibold shrink-0"
-          style={{ backgroundColor: `${exp.color}20`, color: exp.color }}
-        >
-          {exp.tag}
-        </span>
-      </div>
-
-      <div>
-        <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
-        <p className="text-white/55 leading-relaxed text-sm line-clamp-4">{exp.description}</p>
-      </div>
-
-      <button
-        className="mt-auto self-start text-sm font-semibold underline underline-offset-4 text-white/40 group-hover:text-white transition-colors"
-        onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+      {/* Tag fijo: esquina superior derecha, no se mueve */}
+      <span
+        className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full text-xs font-semibold shrink-0 transition-colors duration-300"
+        style={{ backgroundColor: `${exp.color}20`, color: exp.color }}
       >
-        Saber más →
-      </button>
+        {exp.tag}
+      </span>
+
+      {/* Logo: centrado y grande por defecto; en hover pequeño en esquina superior izquierda (animación diagonal) */}
+      <div
+        className="absolute left-1/2 top-1/2 w-40 h-40 -translate-x-1/2 -translate-y-1/2 rounded-xl flex items-center justify-center overflow-hidden transition-all duration-500 ease-out group-hover:left-4 group-hover:top-4 group-hover:w-20 group-hover:h-20 group-hover:translate-x-0 group-hover:translate-y-0 max-md:left-4 max-md:top-4 max-md:w-20 max-md:h-20 max-md:translate-x-0 max-md:translate-y-0"
+        style={{ backgroundColor: `${exp.color}15` }}
+      >
+        {showImage ? (
+          <img
+            src={exp.image}
+            alt=""
+            className="w-full h-full object-contain p-1"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <exp.icon size={32} style={{ color: exp.color }} className="group-hover:scale-75 max-md:scale-75" />
+        )}
+      </div>
+
+      {/* Contenido: nombre, descripción, Saber más — visible solo en hover, animación suave */}
+      <div className="relative z-[1] mt-auto min-h-[140px] opacity-0 group-hover:opacity-100 max-md:opacity-100 transition-opacity duration-500 ease-out">
+        <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
+        <p className="text-white/55 leading-relaxed text-sm">{exp.description}</p>
+        <button
+          className="mt-2 text-sm font-semibold underline underline-offset-4 text-white/40 group-hover:text-white transition-colors duration-200"
+          onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          Saber más →
+        </button>
+      </div>
     </div>
   )
 }
