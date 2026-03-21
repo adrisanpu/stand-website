@@ -32,9 +32,11 @@ export default function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-glass' : 'bg-transparent'}`}>
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" onClick={(e) => handleLink(e, '#')} className="flex items-end gap-2 group">
-          <span className="font-extrabold text-[4rem] leading-none tracking-tight text-white">stand</span>
-          <div className="w-8 h-8 flex items-center justify-center overflow-hidden shrink-0 mb-1">
+        <a href="#" onClick={(e) => handleLink(e, '#')} className="flex items-end gap-1.5 sm:gap-2 group">
+          <span className="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-none tracking-tight text-white">
+            stand
+          </span>
+          <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center overflow-hidden shrink-0 mb-0.5 md:mb-1">
             {!logoError ? (
               <img
                 src={LOGO_IMAGE}
@@ -43,7 +45,7 @@ export default function Navbar() {
                 onError={() => setLogoError(true)}
               />
             ) : (
-              <span className="w-3 h-3 rounded-full bg-[#ff931f]" aria-hidden />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ff931f]" aria-hidden />
             )}
           </div>
         </a>
