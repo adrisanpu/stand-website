@@ -14,7 +14,7 @@ export default function Contact() {
     // In production, replace with your form backend (e.g. Formspree, EmailJS, etc.)
     const subject = encodeURIComponent(`Consulta de ${form.name} — Stand`)
     const body = encodeURIComponent(`Nombre: ${form.name}\nEmail: ${form.email}\n\nMensaje:\n${form.message}`)
-    window.location.href = `mailto:hola@playstand.es?subject=${subject}&body=${body}`
+    window.location.href = `mailto:contact@playstand.app?subject=${subject}&body=${body}`
     setSent(true)
   }
 
@@ -40,7 +40,7 @@ export default function Contact() {
             {/* Alternative CTAs */}
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:hola@playstand.es"
+                href="mailto:contact@playstand.app"
                 className="flex items-center gap-4 p-5 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-[#ff931f]/50 transition-colors group"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#ff931f]/20 flex items-center justify-center shrink-0">
@@ -48,24 +48,22 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white group-hover:text-[#ff931f] transition-colors">Email directo</p>
-                  <p className="text-sm text-white/50">hola@playstand.es</p>
+                  <p className="text-sm text-white/50">contact@playstand.app</p>
                 </div>
               </a>
 
-              <a
-                href="https://wa.me/34600000000?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Stand"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-5 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-[#25d366]/50 transition-colors group"
+              <div
+                className="flex items-center gap-4 p-5 rounded-2xl border border-white/5 bg-white/[0.02] opacity-55 cursor-not-allowed select-none"
+                aria-disabled="true"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#25d366]/20 flex items-center justify-center shrink-0">
-                  <MessageCircle size={20} className="text-[#25d366]" />
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                  <MessageCircle size={20} className="text-white/35" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white group-hover:text-[#25d366] transition-colors">WhatsApp</p>
-                  <p className="text-sm text-white/50">Respuesta inmediata</p>
+                  <p className="text-sm font-semibold text-white/50">WhatsApp</p>
+                  <p className="text-sm text-white/35">Próximamente</p>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
 
