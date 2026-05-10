@@ -1,0 +1,210 @@
+{
+  "seo": {
+    "title": "Stand | playstand.app — Gamified experiences for events",
+    "description": "Stand (playstand.app) — Gamified experiences for corporate events, trade shows, and brand activations. Touchscreens or mobile. Trivia, wheels, challenges, and more."
+  },
+  "common": {
+    "langSwitcher": "Site language",
+    "langEs": "Español",
+    "langEn": "English",
+    "photoPrev": "Previous photo",
+    "photoNext": "Next photo"
+  },
+  "nav": {
+    "about": "About",
+    "catalog": "Catalog",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "tryFree": "Try it free",
+    "openMenu": "Open menu"
+  },
+  "hero": {
+    "title1": "Turn your",
+    "title2": "events into games",
+    "subtitle": "Stand creates unique gamified experiences for corporate events, trade shows, and brand activations. Trivia, prize wheels, challenges, and more.",
+    "ctaCatalog": "View catalog",
+    "mvpLine1": "MVP tested in real pilots with brands and organizers.",
+    "mvpLine2": "More than 250 participants in pilots to date."
+  },
+  "about": {
+    "kicker": "About us",
+    "title1": "The game that changes",
+    "title2": "how you connect",
+    "intro": "We connect brands with their audience through play. Our goal: everyone who visits your booth has a memorable experience, and you can measure impact and capture leads to keep selling.",
+    "pillars": [
+      {
+        "title": "Instant activation",
+        "description": "Participants are hooked from the first second. No learning curve — just fun and competition."
+      },
+      {
+        "title": "Tailored experiences",
+        "description": "We adapt each game to your brand, industry, and goals — from internal training to trade show activations."
+      },
+      {
+        "title": "Leads and contacts",
+        "description": "From the dashboard you choose if and when to ask for data: optional capture, low friction on the floor, and export to follow up after the event."
+      },
+      {
+        "title": "Measurable results",
+        "description": "Real-time dashboard with participation, engagement, and learning metrics to support ROI."
+      }
+    ]
+  },
+  "clientLogos": {
+    "kicker": "Pilots",
+    "title": "Live experiences",
+    "pilots": {
+      "zoco": {
+        "logoAlt": "Zoco Dance Club",
+        "description": "A pilot at a dance club: we brought Stand to the venue with two games built to get people moving and interacting in a loud, fast-paced night setting.",
+        "statsGames": "Activations: {{games}}",
+        "statsUsers": "{{count}} users in the pilot"
+      }
+    }
+  },
+  "catalog": {
+    "kicker": "Catalog",
+    "title1": "Experiences you",
+    "title2": "won’t forget",
+    "subtitle": "Pick the experience that best fits your goals. All fully customizable with your brand.",
+    "scrollHint": "Swipe to see all games →",
+    "learnMore": "Learn more →",
+    "games": [
+      {
+        "tag": "Wit & Speed",
+        "title": "L3tras",
+        "description": "Spell the target word with your letters before anyone else. Wit and speed with optional leaderboard."
+      },
+      {
+        "tag": "Luck & Prize",
+        "title": "Rulet4",
+        "description": "Customizable prize or challenge wheel. Giveaways, dynamics, or energizing a room."
+      },
+      {
+        "tag": "Precision",
+        "title": "T1mer",
+        "description": "Tap at the exact moment the timer hits. Reflex trial — solo or in-room with ranking."
+      },
+      {
+        "tag": "Networking",
+        "title": "Empareja2",
+        "description": "Find your assigned match in the room and exchange codes. Great for networking and getting people moving."
+      },
+      {
+        "tag": "Social",
+        "title": "Cupido",
+        "description": "Match via questionnaire; compatibility traffic light. Find your match and validate the code. Very social."
+      },
+      {
+        "tag": "Icebreaker",
+        "title": "Semáforo",
+        "description": "Red/yellow/green by status. Cross quiz to see how well you know each other. Icebreakers for events."
+      },
+      {
+        "tag": "Showcase",
+        "title": "Info Cards",
+        "description": "Visual cards with your content. Upload a PDF or images and AI builds the cards. For booths and presentations."
+      }
+    ]
+  },
+  "pricing": {
+    "kicker": "Pricing",
+    "title1": "Plans built",
+    "title2": "for every event",
+    "subtitle": "No surprises. No long contracts. Choose the plan that fits your next event.",
+    "billingDay": "1 day",
+    "billingWeek": "1 week",
+    "billingWeekOff": "40% off",
+    "popular": "popular",
+    "tryFreeBadge": "Try FREE",
+    "footerNote": "All prices are indicative. Contact us for a custom quote.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "Ideal for learning the platform before a real event.",
+        "priceNote": "No card required. Set up in under 5 minutes.",
+        "priceUnit": "/∞",
+        "cta": "Try FREE",
+        "features": [
+          "Platform access",
+          "1 active game",
+          "Up to 25 players",
+          "Basic configuration",
+          "Basic visual customization",
+          "Results preview"
+        ]
+      },
+      "event": {
+        "name": "Event",
+        "description": "Ideal for one-off events, on-site activations, and promos.",
+        "priceUnitDay": "/24h",
+        "priceNoteDay": "one-time payment",
+        "priceUnitWeek": "/week",
+        "priceNoteWeek": "40% off",
+        "cta": "Get access",
+        "featureWeekAlt": "Full access for 7 days",
+        "features": [
+          "Full access for 24 hours",
+          "Unlimited games",
+          "Unlimited players",
+          "Fast event setup",
+          "Visual game customization",
+          "Run giveaways",
+          "Optional player forms (configurable in the dashboard)",
+          "Basic results view and export"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Custom gamified activations for brands and professional events.",
+        "priceNote": "from",
+        "priceModularNote": "Base price. Optional add-ons increase the total.",
+        "cta": "Request a proposal",
+        "features": ["Everything in the Event plan"],
+        "servicesTitle": "Optional services:",
+        "services": [
+          "Touchscreens and interactive setups",
+          "Logistics and transport to the venue",
+          "Custom visual design (full branding)",
+          "Content and game mechanics adaptation",
+          "Post-event analytics",
+          "On-site staff",
+          "Merch and custom prizes"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title1": "Let’s talk about",
+    "title2": "your next event",
+    "intro": "Tell us what you have in mind. We reply within 24 hours with a tailored proposal.",
+    "emailDirect": "Email us",
+    "whatsapp": "WhatsApp",
+    "whatsappSoon": "Coming soon",
+    "sentTitle": "Message sent!",
+    "sentBody": "We’ll get back to you within 24 hours.",
+    "labelName": "Name *",
+    "labelEmail": "Email *",
+    "labelMessage": "Message *",
+    "placeholderName": "Your name",
+    "placeholderEmail": "you@company.com",
+    "placeholderMessage": "Tell us about your event: date, expected attendance, type of experience you’re looking for...",
+    "submit": "Send message",
+    "privacyNote": "By sending, you accept our privacy policy.",
+    "mailSubject": "Inquiry from {{name}} — Stand",
+    "mailBodyName": "Name",
+    "mailBodyEmail": "Email",
+    "mailBodyMessage": "Message"
+  },
+  "footer": {
+    "tagline": "Gamified experiences for corporate events and brand activations.",
+    "sections": "Sections",
+    "legal": "Legal",
+    "privacy": "Privacy policy",
+    "legalNotice": "Legal notice",
+    "cookies": "Cookies",
+    "copyright": "© {{year}} Stand. All rights reserved.",
+    "madeIn": "Made with care in Spain"
+  }
+}

@@ -1,20 +1,17 @@
 import { useState } from 'react'
 import { Instagram, Linkedin, Twitter } from 'lucide-react'
+import { useI18n } from '../i18n/useI18n.js'
 
 const LOGO_IMAGE = '/images/stand-logo.png'
 
-const navLinks = [
-  { label: 'Sobre nosotros', href: '#about' },
-  { label: 'Catálogo', href: '#catalog' },
-  { label: 'Precios', href: '#pricing' },
-  { label: 'Contacto', href: '#contact' },
+const NAV_HREFS = [
+  { key: 'about', href: '#about' },
+  { key: 'catalog', href: '#catalog' },
+  { key: 'pricing', href: '#pricing' },
+  { key: 'contact', href: '#contact' },
 ]
 
-const legalLinks = [
-  { label: 'Política de privacidad', href: '#' },
-  { label: 'Aviso legal', href: '#' },
-  { label: 'Cookies', href: '#' },
-]
+const LEGAL_KEYS = ['privacy', 'legalNotice', 'cookies']
 
 const socialLinks = [
   { Icon: Instagram, href: 'https://instagram.com/playstand', label: 'Instagram' },
@@ -23,6 +20,9 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+  const { t, messages } = useI18n()
+  const [logoError, setLogoError] = useState(false)
+
   const scrollTo = (href) => {
     if (href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -32,15 +32,15 @@ export default function Footer() {
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const [logoError, setLogoError] = useState(false)
+  const year = new Date().getFullYear()
 
   return (
     <footer className="border-t border-white/10 py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
-          {/* Brand */}
           <div className="flex flex-col gap-4">
             <button
+              type="button"
               onClick={() => scrollTo('#')}
               className="flex items-center gap-2 group w-fit"
             >
@@ -58,9 +58,7 @@ export default function Footer() {
               </div>
               <span className="font-extrabold text-xl tracking-tight text-white">Stand</span>
             </button>
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              Experiencias gamificadas para eventos corporativos y activaciones de marca.
-            </p>
+            <p className="text-white/40 text-sm leading-relaxed max-w-xs">{messages.footer.tagline}</p>
             <div className="flex gap-3 mt-2">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a
@@ -77,34 +75,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Nav links */}
           <div>
-            <p className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">Secciones</p>
+            <p className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">{messages.footer.sections}</p>
             <ul className="flex flex-col gap-3">
-              {navLinks.map((link) => (
+              {NAV_HREFS.map((link) => (
                 <li key={link.href}>
                   <button
+                    type="button"
                     onClick={() => scrollTo(link.href)}
                     className="text-sm text-white/40 hover:text-white transition-colors text-left"
                   >
-                    {link.label}
+                    {t(`nav.${link.key}`)}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
-            <p className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">Legal</p>
+            <p className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">{messages.footer.legal}</p>
             <ul className="flex flex-col gap-3">
-              {legalLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-white/40 hover:text-white transition-colors"
-                  >
-                    {link.label}
+              {LEGAL_KEYS.map((key) => (
+                <li key={key}>
+                  <a href="#" className="text-sm text-white/40 hover:text-white transition-colors">
+                    {messages.footer[key]}
                   </a>
                 </li>
               ))}
@@ -112,14 +106,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Stand. Todos los derechos reservados.
-          </p>
-          <p className="text-xs text-white/20">
-            Hecho con 🧡 en España
-          </p>
+          <p className="text-xs text-white/30">{t('footer.copyright', { year })}</p>
+          <p className="text-xs text-white/20">{messages.footer.madeIn}</p>
         </div>
       </div>
     </footer>

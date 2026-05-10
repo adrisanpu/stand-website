@@ -1,6 +1,9 @@
 import { ArrowRight } from 'lucide-react'
+import { useI18n } from '../i18n/useI18n.js'
 
 export default function Hero() {
+  const { t } = useI18n()
+
   const scrollTo = (href) => {
     const el = document.querySelector(href)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
@@ -11,14 +14,12 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
-      {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="hero-bg-float-1 absolute top-1/4 left-1/2 w-[600px] h-[600px] rounded-full bg-[#ff931f]/20 blur-[120px]" />
         <div className="hero-bg-float-2 absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#ff931f]/10 blur-[100px]" />
         <div className="hero-bg-float-3 absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-[#ff931f]/10 blur-[80px]" />
       </div>
 
-      {/* Geometric shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="hero-shape-drift-12 absolute top-20 right-12 w-24 h-24 border border-[#ff931f]/30 rounded-2xl opacity-60" />
         <div className="hero-shape-drift-neg6 absolute bottom-32 left-10 w-16 h-16 border border-[#ff931f]/30 rounded-xl opacity-50" />
@@ -26,7 +27,6 @@ export default function Hero() {
         <div className="hero-dot-drift absolute top-1/3 left-1/4 w-4 h-4 bg-[#ff931f]/40 rounded-full opacity-70" style={{ animationDelay: '-4s' }} />
       </div>
 
-      {/* Pantallas de fondo: horizontal izquierda, vertical derecha */}
       <div className="absolute inset-0 pointer-events-none flex items-center">
         <img
           src="/images/pantalla_horizontal.png"
@@ -42,13 +42,13 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight sm:leading-none tracking-tight mb-6">
-          <span className="text-white">Transforma tus</span>
+          <span className="text-white">{t('hero.title1')}</span>
           <br />
-          <span className="text-gradient">eventos en juego</span>
+          <span className="text-gradient">{t('hero.title2')}</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Stand crea experiencias gamificadas únicas para eventos corporativos, ferias y activaciones de marca. Trivials, ruletas, retos y mucho más.
+          {t('hero.subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -58,23 +58,24 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ff931f] hover:bg-[#e67e0f] text-white font-bold text-base transition-colors duration-200 shadow-lg shadow-[#ff931f]/30"
           >
-            Pruébalo gratis
+            {t('nav.tryFree')}
             <ArrowRight size={18} />
           </a>
           <button
+            type="button"
             onClick={() => scrollTo('#catalog')}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 hover:border-[#ff931f] text-white font-semibold text-base transition-colors duration-200"
           >
-            Ver catálogo
+            {t('hero.ctaCatalog')}
           </button>
         </div>
 
-        <p className="mt-12 text-sm text-white/30">
-          Proyecto en busca de pilotos.
-        </p>
+        <div className="mt-12 text-sm text-white/30 max-w-xl mx-auto space-y-2">
+          <p>{t('hero.mvpLine1')}</p>
+          <p>{t('hero.mvpLine2')}</p>
+        </div>
       </div>
 
-      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#101011] to-transparent pointer-events-none" />
     </section>
   )
