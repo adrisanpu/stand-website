@@ -25,11 +25,11 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="py-24 px-6 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#ff931f]/8 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-brand-orange/8 blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-[#ff931f] font-semibold text-sm uppercase tracking-widest mb-4">{messages.pricing.kicker}</p>
+          <p className="text-brand-orange font-semibold text-sm uppercase tracking-widest mb-4">{messages.pricing.kicker}</p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6">
             {messages.pricing.title1}
             <br />
@@ -44,7 +44,7 @@ export default function Pricing() {
               type="button"
               onClick={() => setBillingPeriod('day')}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                billingPeriod === 'day' ? 'bg-[#ff931f] text-white' : 'text-white/60 hover:text-white'
+                billingPeriod === 'day' ? 'bg-brand-orange text-white' : 'text-white/60 hover:text-white'
               }`}
             >
               {messages.pricing.billingDay}
@@ -53,7 +53,7 @@ export default function Pricing() {
               type="button"
               onClick={() => setBillingPeriod('week')}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                billingPeriod === 'week' ? 'bg-[#ff931f] text-white' : 'text-white/60 hover:text-white'
+                billingPeriod === 'week' ? 'bg-brand-orange text-white' : 'text-white/60 hover:text-white'
               }`}
             >
               {messages.pricing.billingWeek}{' '}
@@ -73,13 +73,13 @@ export default function Pricing() {
             return (
               <div
                 key={planId}
-                className={`relative p-8 rounded-2xl flex flex-col gap-6 ${
-                  isEvent ? 'border-2 border-[#ff931f] bg-[#ff931f]/10' : 'border border-white/10 bg-white/[0.03]'
+                className={`relative p-8 rounded-card flex flex-col gap-6 ${
+                  isEvent ? 'border-2 border-brand-orange bg-brand-orange/10' : 'border border-white/10 bg-white/[0.03]'
                 }`}
               >
                 {isEvent && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1.5 rounded-full bg-[#ff931f] text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-[#ff931f]/40">
+                    <span className="px-4 py-1.5 rounded-full bg-brand-orange text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-brand-orange/40">
                       {messages.pricing.popular}
                     </span>
                   </div>
@@ -136,7 +136,7 @@ export default function Pricing() {
                     }
                     return (
                       <li key={j} className="flex items-start gap-3 text-sm text-white/70">
-                        <Check size={16} className="mt-0.5 shrink-0 text-[#ff931f]" />
+                        <Check size={16} className="mt-0.5 shrink-0 text-brand-orange" />
                         {text}
                       </li>
                     )
@@ -151,7 +151,7 @@ export default function Pricing() {
                     <ul className="flex flex-col gap-2">
                       {plan.services.map((s, j) => (
                         <li key={j} className="flex items-start gap-2 text-sm text-white/50">
-                          <Check size={14} className="mt-0.5 shrink-0 text-[#ff931f]/80" />
+                          <Check size={14} className="mt-0.5 shrink-0 text-brand-orange/80" />
                           {s}
                         </li>
                       ))}
@@ -164,7 +164,7 @@ export default function Pricing() {
                     href={LOGIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 rounded-xl font-bold text-sm transition-colors duration-200 bg-white/10 hover:bg-white/15 text-white border border-white/20 text-center block"
+                    className="w-full py-3 rounded-control font-bold text-sm transition-colors duration-200 bg-white/10 hover:bg-white/15 text-white border border-white/20 text-center block"
                   >
                     {plan.cta}
                   </a>
@@ -173,7 +173,7 @@ export default function Pricing() {
                     href={CHECKOUT_APP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 rounded-xl font-bold text-sm transition-colors duration-200 bg-[#ff931f] hover:bg-[#e67e0f] text-white shadow-lg shadow-[#ff931f]/30 text-center block"
+                    className="w-full py-3 rounded-control font-bold text-sm transition-colors duration-200 bg-brand-orange hover:bg-brand-orange-dark text-white shadow-lg shadow-brand-orange/30 text-center block"
                   >
                     {plan.cta}
                   </a>
@@ -181,7 +181,7 @@ export default function Pricing() {
                   <button
                     type="button"
                     onClick={scrollToContact}
-                    className="w-full py-3 rounded-xl font-bold text-sm transition-colors duration-200 bg-[#ff931f] hover:bg-[#e67e0f] text-white shadow-lg shadow-[#ff931f]/30"
+                    className="w-full py-3 rounded-control font-bold text-sm transition-colors duration-200 bg-brand-orange hover:bg-brand-orange-dark text-white shadow-lg shadow-brand-orange/30"
                   >
                     {plan.cta}
                   </button>

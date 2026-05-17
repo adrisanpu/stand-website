@@ -11,7 +11,7 @@ export default function About() {
     <section id="about" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mb-16">
-          <p className="text-[#ff931f] font-semibold text-sm uppercase tracking-widest mb-4">{messages.about.kicker}</p>
+          <p className="text-brand-orange font-semibold text-sm uppercase tracking-widest mb-4">{messages.about.kicker}</p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6">
             {messages.about.title1}
             <br />
@@ -26,10 +26,10 @@ export default function About() {
             return (
               <div
                 key={p.title}
-                className="card-hover p-8 rounded-2xl border border-white/10 bg-white/[0.03] flex flex-col gap-5"
+                className="card-hover p-8 rounded-card border border-white/10 bg-white/[0.03] flex flex-col gap-5"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#ff931f]/20 flex items-center justify-center">
-                  <Icon size={24} className="text-[#ff931f]" />
+                <div className="w-12 h-12 rounded-control bg-brand-orange/20 flex items-center justify-center">
+                  <Icon size={24} className="text-brand-orange" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">{p.title}</h3>

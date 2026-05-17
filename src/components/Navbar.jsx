@@ -23,7 +23,7 @@ function LanguageSwitch({ className = '' }) {
         type="button"
         onClick={() => setLocale('es')}
         className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-colors ${
-          locale === 'es' ? 'bg-[#ff931f] text-white' : 'text-white/60 hover:text-white'
+          locale === 'es' ? 'bg-brand-orange text-white' : 'text-white/60 hover:text-white'
         }`}
         aria-pressed={locale === 'es'}
         aria-label={t('common.langEs')}
@@ -34,7 +34,7 @@ function LanguageSwitch({ className = '' }) {
         type="button"
         onClick={() => setLocale('en')}
         className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-colors ${
-          locale === 'en' ? 'bg-[#ff931f] text-white' : 'text-white/60 hover:text-white'
+          locale === 'en' ? 'bg-brand-orange text-white' : 'text-white/60 hover:text-white'
         }`}
         aria-pressed={locale === 'en'}
         aria-label={t('common.langEn')}
@@ -80,7 +80,7 @@ export default function Navbar() {
                 onError={() => setLogoError(true)}
               />
             ) : (
-              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ff931f]" aria-hidden />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-brand-orange" aria-hidden />
             )}
           </div>
         </a>
@@ -104,7 +104,7 @@ export default function Navbar() {
             href="https://playstand.app/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center min-w-[11.5rem] px-5 py-2 rounded-full bg-[#ff931f] hover:bg-[#e67e0f] text-white text-sm font-semibold transition-colors duration-200 shrink-0 text-center"
+            className="inline-flex items-center justify-center min-w-[11.5rem] px-5 py-2 rounded-full bg-brand-orange hover:bg-brand-orange-dark text-white text-sm font-semibold transition-colors duration-200 shrink-0 text-center"
           >
             {t('nav.tryFree')}
           </a>
@@ -124,7 +124,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="md:hidden bg-[#101011] border-t border-white/10 px-6 pb-6 pt-4">
+        <div className="md:hidden bg-brand-dark border-t border-white/10 px-6 pb-6 pt-4">
           <ul className="flex flex-col gap-4">
             {LINK_HREFS.map((link) => (
               <li key={link.href}>
@@ -142,7 +142,7 @@ export default function Navbar() {
             href="https://playstand.app/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 block text-center px-5 py-3 rounded-full bg-[#ff931f] hover:bg-[#e67e0f] text-white font-semibold transition-colors"
+            className="mt-6 block text-center px-5 py-3 rounded-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold transition-colors"
           >
             {t('nav.tryFree')}
           </a>

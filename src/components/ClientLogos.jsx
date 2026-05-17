@@ -25,7 +25,7 @@ function PilotPhotoViewer({ pilotId, photos }) {
   }
 
   const arrowBtn =
-    'relative z-[60] flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#101011]/90 text-white shadow-md ring-1 ring-white/20 transition-opacity md:h-8 md:w-8'
+    'relative z-[60] flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-dark/90 text-white shadow-md ring-1 ring-white/20 transition-opacity md:h-8 md:w-8'
 
   return (
     <div className="group relative flex items-center gap-0.5 overflow-visible sm:gap-1">
@@ -71,9 +71,9 @@ export default function ClientLogos() {
   const { kicker, title, pilots: pilotCopy } = messages.clientLogos
 
   return (
-    <section className="py-20 sm:py-24 bg-[#101011]">
+    <section className="py-20 sm:py-24 bg-brand-dark">
       <div className="max-w-6xl mx-auto px-6 mb-12">
-        <p className="text-[#ff931f] font-semibold text-sm uppercase tracking-widest mb-2">{kicker}</p>
+        <p className="text-brand-orange font-semibold text-sm uppercase tracking-widest mb-2">{kicker}</p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white/90">{title}</h2>
       </div>
 

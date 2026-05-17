@@ -1,3 +1,10 @@
+import {
+  BRAND_DARK,
+  BRAND_ORANGE,
+  BRAND_ORANGE_DARK,
+  BRAND_ORANGE_LIGHT,
+} from './src/constants/brandColors.js'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,13 +15,19 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#101011',
-          orange: '#ff931f',
-          'orange-dark': '#e67e0f',
+          dark: BRAND_DARK,
+          orange: BRAND_ORANGE,
+          'orange-dark': BRAND_ORANGE_DARK,
+          'orange-light': BRAND_ORANGE_LIGHT,
         },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+      },
+      borderRadius: {
+        card: '16px',
+        control: '8px',
+        pill: '9999px',
       },
     },
   },

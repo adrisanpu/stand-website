@@ -8,12 +8,6 @@
   66% { transform: translate(-2%, 2%) scale(0.98); }
 }
 
-@keyframes float-slow-center {
-  0%, 100% { transform: translate(-50%, -50%) translate(0, 0) scale(1); }
-  33% { transform: translate(-50%, -50%) translate(3%, -2%) scale(1.02); }
-  66% { transform: translate(-50%, -50%) translate(-2%, 2%) scale(0.98); }
-}
-
 @keyframes float-slow-alt {
   0%, 100% { transform: translate(0, 0) scale(1); }
   50% { transform: translate(-3%, 2%) scale(1.03); }
@@ -52,26 +46,31 @@
   }
 
   body {
-    background-color: #101011;
+    background-color: theme('colors.brand.dark');
     color: white;
-    font-family: 'Inter', sans-serif;
+    font-family: theme('fontFamily.sans');
     -webkit-font-smoothing: antialiased;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #e67e0f 0%, #ff931f 50%, #ffa94d 100%);
+    background: linear-gradient(
+      135deg,
+      theme('colors.brand.orange-dark') 0%,
+      theme('colors.brand.orange') 50%,
+      theme('colors.brand.orange-light') 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-glass {
-    background: rgba(16, 16, 17, 0.8);
+    background: color-mix(in srgb, theme('colors.brand.dark') 80%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 147, 31, 0.2);
+    border-bottom: 1px solid color-mix(in srgb, theme('colors.brand.orange') 20%, transparent);
   }
 
   .card-hover {
@@ -80,7 +79,7 @@
 
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(255, 147, 31, 0.2);
+    box-shadow: 0 20px 40px color-mix(in srgb, theme('colors.brand.orange') 20%, transparent);
   }
 }
 
@@ -96,22 +95,19 @@
   border-radius: 3px;
 }
 .overflow-x-auto::-webkit-scrollbar-thumb {
-  background: rgba(255, 147, 31, 0.4);
+  background: color-mix(in srgb, theme('colors.brand.orange') 40%, transparent);
   border-radius: 3px;
 }
 .overflow-x-auto::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 147, 31, 0.6);
+  background: color-mix(in srgb, theme('colors.brand.orange') 60%, transparent);
 }
 
-/* Hero background animations */
-.hero-bg-float-1 {
-  animation: float-slow-center 20s ease-in-out infinite;
+/* Hero background: side blobs drift without centering transforms */
+.hero-bg-glow-left {
+  animation: float-slow 20s ease-in-out infinite;
 }
-.hero-bg-float-2 {
+.hero-bg-glow-right {
   animation: float-slow-alt 24s ease-in-out infinite;
-}
-.hero-bg-float-3 {
-  animation: float-slow 18s ease-in-out infinite;
 }
 .hero-shape-drift {
   animation: drift-shape 14s ease-in-out infinite;

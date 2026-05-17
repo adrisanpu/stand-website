@@ -14,7 +14,7 @@ const NAV_HREFS = [
 const LEGAL_KEYS = ['privacy', 'legalNotice', 'cookies']
 
 const socialLinks = [
-  { Icon: Instagram, href: 'https://instagram.com/playstand', label: 'Instagram' },
+  { Icon: Instagram, href: 'https://instagram.com/playstand_', label: 'Instagram' },
   { Icon: Linkedin, href: 'https://linkedin.com/company/playstand', label: 'LinkedIn' },
   { Icon: Twitter, href: 'https://twitter.com/playstand', label: 'Twitter' },
 ]
@@ -67,7 +67,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-[#ff931f] transition-colors"
+                  className="w-9 h-9 rounded-control border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-orange transition-colors"
                 >
                   <Icon size={16} />
                 </a>
