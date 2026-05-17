@@ -8,6 +8,8 @@ Deployed via AWS Amplify from the `main` branch (auto-deploys on push).
 **Commands:** `npm run dev` | `npm run build`
 **Deploy:** Push to `main` → Amplify auto-deploys to playstand.app
 
+**Branches:** `main`, `dev`. PRs to `dev` → squash merge (ruleset). CI: `.github/workflows/ci.yml` (`npm run build` on PRs). Ruleset JSON: `docs/github-ruleset-dev-squash.json`.
+
 **Section order (fixed):** Navbar → Hero → About → ClientLogos → Catalog → Pricing → Contact → Footer
 
 **Brand (see repo root DESIGN.md):**
