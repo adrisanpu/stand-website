@@ -72,37 +72,37 @@
     "games": [
       {
         "tag": "Wit & Speed",
-        "title": "L3tras",
+        "title": "L3TRAS",
         "description": "Spell the target word with your letters before anyone else. Wit and speed with optional leaderboard."
       },
       {
         "tag": "Luck & Prize",
-        "title": "Rulet4",
+        "title": "RULET4",
         "description": "Customizable prize or challenge wheel. Giveaways, dynamics, or energizing a room."
       },
       {
         "tag": "Precision",
-        "title": "T1mer",
+        "title": "T1MER",
         "description": "Tap at the exact moment the timer hits. Reflex trial — solo or in-room with ranking."
       },
       {
         "tag": "Networking",
-        "title": "Empareja2",
+        "title": "EMPAREJA2",
         "description": "Find your assigned match in the room and exchange codes. Great for networking and getting people moving."
       },
       {
         "tag": "Social",
-        "title": "Cupido",
+        "title": "CUPIDO",
         "description": "Match via questionnaire; compatibility traffic light. Find your match and validate the code. Very social."
       },
       {
         "tag": "Icebreaker",
-        "title": "Semáforo",
+        "title": "SEMAFORO",
         "description": "Red/yellow/green by status. Cross quiz to see how well you know each other. Icebreakers for events."
       },
       {
         "tag": "Showcase",
-        "title": "Info Cards",
+        "title": "INFOCARDS",
         "description": "Visual cards with your content. Upload a PDF or images and AI builds the cards. For booths and presentations."
       }
     ]

@@ -7,7 +7,7 @@ export const pilots = [
     id: 'zoco',
     logo: '/clients/zoco/zoco-logo.png',
     photos: ['zoco-photo-1.jpeg', 'zoco-photo-2.jpeg'],
-    games: ['Empareja2', 'T1mer'],
+    games: ['EMPAREJA2', 'T1MER'],
     userCount: 257,
   },
 ]

@@ -72,37 +72,37 @@
     "games": [
       {
         "tag": "Ingenio & Velocidad",
-        "title": "L3tras",
+        "title": "L3TRAS",
         "description": "Forma la palabra objetivo con tus letras antes que el resto. Ingenio y velocidad con ranking opcional."
       },
       {
         "tag": "Suerte & Premio",
-        "title": "Rulet4",
+        "title": "RULET4",
         "description": "Ruleta de premios o retos personalizable. Sorteos, dinámicas o animar al público en formato sala."
       },
       {
         "tag": "Precisión",
-        "title": "T1mer",
+        "title": "T1MER",
         "description": "Pulsa en el momento exacto que marca el temporizador. Prueba de reflejos; individual o en sala con ranking."
       },
       {
         "tag": "Networking",
-        "title": "Empareja2",
+        "title": "EMPAREJA2",
         "description": "Encuentra a tu pareja asignada en la sala e intercambiad códigos. Ideal para networking y que la gente se mueva."
       },
       {
         "tag": "Social",
-        "title": "Cupido",
+        "title": "CUPIDO",
         "description": "Empareja por cuestionario; semáforo de compatibilidad. Encuentra a tu pareja y validad el código. Muy social."
       },
       {
         "tag": "Romper el hielo",
-        "title": "Semáforo",
+        "title": "SEMAFORO",
         "description": "Rojo/amarillo/verde según estado. Quiz cruzado para ver si os conocéis. Romper el hielo en eventos."
       },
       {
         "tag": "Presentación",
-        "title": "Info Cards",
+        "title": "INFOCARDS",
         "description": "Tarjetas visuales con tu información. Sube PDF o imágenes y la IA genera las tarjetas. Para ferias y presentaciones."
       }
     ]

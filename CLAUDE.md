@@ -22,6 +22,7 @@ Deployed via AWS Amplify from the `main` branch (auto-deploys on push).
 **Tech:** Tailwind CSS 3.4.4 | Lucide React (icons) | React 18 JSX
 
 ## HOW
+- **Agent rules:** workspace [software-rule.md](../software-rule.md) + [infrastructure-rule.md](../infrastructure-rule.md)
 - **No TypeScript** — all files are .jsx, never .tsx
 - **No React Router** — single-page, all sections in App.jsx via scroll
 - **No auth** — website has zero authentication code
