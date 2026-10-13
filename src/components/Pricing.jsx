@@ -7,44 +7,34 @@ const LOGIN_URL = 'https://playstand.app/login'
 
 const PLAN_IDS = ['starter', 'event', 'enterprise']
 
-const PLAN_NUMBERS = {
-  starter: { price: '0' },
-  event: { priceDay: '24', priceWeek: '99' },
-  enterprise: { priceFrom: '99' },
-}
-
 export default function Pricing() {
   const { messages } = useI18n()
   const [billingPeriod, setBillingPeriod] = useState('day')
 
   const pp = messages.pricing.plans
 
-  const scrollToContact = () => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <section id="pricing" className="py-24 px-6 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-brand-orange/8 blur-[100px] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-brand-orange font-semibold text-sm uppercase tracking-widest mb-4">{messages.pricing.kicker}</p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6">
+    <section id="pricing" className="section-shell bg-brand-paper text-brand-ink">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="eyebrow">{messages.pricing.kicker}</p>
+          <h2 className="section-title font-display">
             {messages.pricing.title1}
             <br />
-            <span className="text-gradient">{messages.pricing.title2}</span>
+            <span className="text-[#9c4700]">{messages.pricing.title2}</span>
           </h2>
-          <p className="text-white/60 text-lg">{messages.pricing.subtitle}</p>
+          <p className="body-copy mt-5">{messages.pricing.subtitle}</p>
         </div>
 
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1 rounded-full bg-white/5 border border-white/10">
+        <div className="mb-10 flex flex-col items-center gap-3">
+          <p className="text-sm font-semibold text-brand-muted">{messages.pricing.durationLabel}</p>
+          <div role="group" aria-label={messages.pricing.durationLabel} className="inline-flex rounded-full border border-brand-line bg-white p-1">
             <button
               type="button"
               onClick={() => setBillingPeriod('day')}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                billingPeriod === 'day' ? 'bg-brand-orange text-white' : 'text-white/60 hover:text-white'
+              aria-pressed={billingPeriod === 'day'}
+              className={`min-h-11 rounded-full px-5 py-2 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange ${
+                billingPeriod === 'day' ? 'bg-brand-orange text-brand-ink' : 'text-brand-muted hover:text-brand-ink'
               }`}
             >
               {messages.pricing.billingDay}
@@ -52,20 +42,19 @@ export default function Pricing() {
             <button
               type="button"
               onClick={() => setBillingPeriod('week')}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                billingPeriod === 'week' ? 'bg-brand-orange text-white' : 'text-white/60 hover:text-white'
+              aria-pressed={billingPeriod === 'week'}
+              className={`min-h-11 rounded-full px-5 py-2 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange ${
+                billingPeriod === 'week' ? 'bg-brand-orange text-brand-ink' : 'text-brand-muted hover:text-brand-ink'
               }`}
             >
-              {messages.pricing.billingWeek}{' '}
-              <span className="text-white/90 font-semibold">{messages.pricing.billingWeekOff}</span>
+              {messages.pricing.billingWeek}
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
           {PLAN_IDS.map((planId) => {
             const plan = pp[planId]
-            const nums = PLAN_NUMBERS[planId]
             const isEvent = planId === 'event'
             const isEnterprise = planId === 'enterprise'
             const isStarter = planId === 'starter'
@@ -73,70 +62,53 @@ export default function Pricing() {
             return (
               <div
                 key={planId}
-                className={`relative p-8 rounded-card flex flex-col gap-6 ${
-                  isEvent ? 'border-2 border-brand-orange bg-brand-orange/10' : 'border border-white/10 bg-white/[0.03]'
+                className={`flex h-full flex-col gap-6 rounded-3xl p-7 ${
+                  isEvent ? 'border-2 border-brand-orange bg-white shadow-lg shadow-brand-orange/10' : 'border border-brand-line bg-white'
                 }`}
               >
-                {isEvent && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1.5 rounded-full bg-brand-orange text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-brand-orange/40">
-                      {messages.pricing.popular}
-                    </span>
-                  </div>
-                )}
+                <p className="min-h-6 text-sm font-semibold text-brand-orange-dark">
+                  {isEvent ? messages.pricing.recommended : '\u00a0'}
+                </p>
 
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">{plan.name}</h3>
-                  <p className="text-white/60 text-sm mb-4">{plan.description}</p>
-                  <div className="flex flex-wrap items-baseline gap-1 mb-1">
+                  <h3 className="mb-1 text-xl font-bold">{plan.name}</h3>
+                  <p className="mb-5 text-sm leading-relaxed text-brand-muted">{plan.description}</p>
+                  <div className="mb-1 flex flex-wrap items-baseline gap-2">
                     {isEnterprise ? (
-                      <>
-                        <span className="text-4xl font-black text-white">{nums.priceFrom}€</span>
-                        {plan.priceNote && (
-                          <span className="text-white/40 text-sm ml-1">{plan.priceNote}</span>
-                        )}
-                      </>
+                      <span className="text-3xl font-black tracking-tight">{plan.priceFrom}</span>
                     ) : isEvent ? (
                       <>
-                        <span className="text-4xl font-black text-white">
-                          {billingPeriod === 'day' ? nums.priceDay : nums.priceWeek}€
+                        <span className="text-3xl font-black tracking-tight">
+                          {billingPeriod === 'day' ? plan.priceDay : plan.priceWeek}
                         </span>
-                        <span className="text-white/60 text-sm">
+                        <span className="text-sm text-brand-muted">
                           {billingPeriod === 'day' ? plan.priceUnitDay : plan.priceUnitWeek}
                         </span>
                       </>
                     ) : (
                       <>
-                        <span className="text-4xl font-black text-white">{nums.price}€</span>
-                        <span className="text-white/60 text-sm">{plan.priceUnit}</span>
+                        <span className="text-3xl font-black tracking-tight">{plan.price}</span>
+                        <span className="text-sm text-brand-muted">{plan.priceUnit}</span>
                       </>
                     )}
                   </div>
-                  {isEnterprise && plan.priceModularNote && (
-                    <p className="text-white/40 text-xs mt-1">{plan.priceModularNote}</p>
-                  )}
-                  {isStarter && plan.priceNote && <p className="text-white/40 text-xs">{plan.priceNote}</p>}
+                  {isEnterprise && <p className="mt-2 text-sm text-brand-muted">{plan.priceModularNote}</p>}
                   {isEvent && (
-                    <p className="text-white/40 text-xs">
+                    <p className="text-xs text-brand-muted">
                       {billingPeriod === 'day' ? plan.priceNoteDay : plan.priceNoteWeek}
                     </p>
                   )}
-                  {isEnterprise && (
-                    <span className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 rounded-md bg-white/10 text-white/70 text-xs font-medium">
-                      {messages.pricing.tryFreeBadge}
-                    </span>
-                  )}
                 </div>
 
-                <ul className="flex flex-col gap-3 flex-1">
+                <ul className="flex flex-1 flex-col gap-3">
                   {plan.features.map((f, j) => {
                     let text = f
                     if (isEvent && billingPeriod === 'week' && j === 0) {
                       text = pp.event.featureWeekAlt
                     }
                     return (
-                      <li key={j} className="flex items-start gap-3 text-sm text-white/70">
-                        <Check size={16} className="mt-0.5 shrink-0 text-brand-orange" />
+                      <li key={j} className="flex items-start gap-3 text-sm leading-relaxed text-brand-ink">
+                        <Check size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-brand-orange-dark" />
                         {text}
                       </li>
                     )
@@ -144,14 +116,14 @@ export default function Pricing() {
                 </ul>
 
                 {isEnterprise && plan.servicesTitle && (
-                  <div className="pt-2 border-t border-white/10">
-                    <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
+                  <div className="border-t border-brand-line pt-4">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand-muted">
                       {plan.servicesTitle}
                     </p>
                     <ul className="flex flex-col gap-2">
                       {plan.services.map((s, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-white/50">
-                          <Check size={14} className="mt-0.5 shrink-0 text-brand-orange/80" />
+                        <li key={j} className="flex items-start gap-2 text-sm leading-relaxed text-brand-muted">
+                          <Check size={14} aria-hidden="true" className="mt-0.5 shrink-0 text-brand-orange-dark" />
                           {s}
                         </li>
                       ))}
@@ -164,7 +136,7 @@ export default function Pricing() {
                     href={LOGIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 rounded-control font-bold text-sm transition-colors duration-200 bg-white/10 hover:bg-white/15 text-white border border-white/20 text-center block"
+                    className="button-secondary mt-auto w-full"
                   >
                     {plan.cta}
                   </a>
@@ -173,25 +145,24 @@ export default function Pricing() {
                     href={CHECKOUT_APP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 rounded-control font-bold text-sm transition-colors duration-200 bg-brand-orange hover:bg-brand-orange-dark text-white shadow-lg shadow-brand-orange/30 text-center block"
+                    className="button-primary mt-auto w-full"
                   >
                     {plan.cta}
                   </a>
                 ) : (
-                  <button
-                    type="button"
-                    onClick={scrollToContact}
-                    className="w-full py-3 rounded-control font-bold text-sm transition-colors duration-200 bg-brand-orange hover:bg-brand-orange-dark text-white shadow-lg shadow-brand-orange/30"
+                  <a
+                    href="#contact"
+                    className="button-primary mt-auto w-full"
                   >
                     {plan.cta}
-                  </button>
+                  </a>
                 )}
               </div>
             )
           })}
         </div>
 
-        <p className="text-center text-white/30 text-sm mt-10">{messages.pricing.footerNote}</p>
+        <p className="mt-8 text-center text-sm text-brand-muted">{messages.pricing.footerNote}</p>
       </div>
     </section>
   )

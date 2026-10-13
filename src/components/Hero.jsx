@@ -1,86 +1,67 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Contact, MousePointer2, Paintbrush, UsersRound } from 'lucide-react'
 import { useI18n } from '../i18n/useI18n.js'
+import { pilots } from '../data/pilots.js'
 
 export default function Hero() {
   const { t } = useI18n()
 
-  const scrollTo = (href) => {
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
-    >
-      {/* Half-orbs: circle centered on viewport edge (clipped by overflow-hidden) reaches inward toward the monitors */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[min(120vmin,700px)] h-[min(120vmin,700px)] md:w-[min(132vmin,820px)] md:h-[min(132vmin,820px)]">
-          <div className="hero-bg-glow-left h-full w-full rounded-full bg-brand-orange/13 blur-[128px]" />
-        </div>
-        <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-[min(120vmin,700px)] h-[min(120vmin,700px)] md:w-[min(132vmin,820px)] md:h-[min(132vmin,820px)]">
-          <div className="hero-bg-glow-right h-full w-full rounded-full bg-brand-orange/13 blur-[128px]" />
-        </div>
-      </div>
-
-      <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-        <div className="hero-shape-drift-12 absolute top-[18%] right-[4%] md:right-[6%] w-24 h-24 border border-brand-orange/22 rounded-card opacity-45" />
-        <div className="hero-shape-drift-neg6 absolute bottom-[22%] left-[4%] md:left-[6%] w-16 h-16 border border-brand-orange/22 rounded-control opacity-40" />
-        <div className="hero-dot-drift absolute top-[48%] right-[6%] w-6 h-6 bg-brand-orange/20 rounded-full opacity-50 md:right-[8%]" />
-        <div className="hero-dot-drift absolute top-[44%] left-[6%] w-4 h-4 bg-brand-orange/25 rounded-full opacity-55 md:left-[8%]" style={{ animationDelay: '-4s' }} />
-      </div>
-
-      <div className="absolute inset-0 z-[2] pointer-events-none flex items-center">
-        <img
-          src="/images/pantalla_horizontal.png"
-          alt=""
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[15%] max-h-[35vh] md:max-h-[70vh] w-auto object-contain object-left opacity-[0.78] md:opacity-[0.9] drop-shadow-[0_25px_50px_rgba(0,0,0,0.45)]"
-        />
-        <img
-          src="/images/pantalla_vertical.png"
-          alt=""
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[15%] max-h-[35vh] md:max-h-[70vh] w-auto object-contain object-right opacity-[0.78] md:opacity-[0.9] drop-shadow-[0_25px_50px_rgba(0,0,0,0.45)]"
-        />
-      </div>
-
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight sm:leading-none tracking-tight mb-6">
-          <span className="text-white">{t('hero.title1')}</span>
-          <br />
-          <span className="text-gradient">{t('hero.title2')}</span>
-        </h1>
-
-        <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
-          {t('hero.subtitle')}
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="https://playstand.app/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-orange hover:bg-brand-orange-dark text-white font-bold text-base transition-colors duration-200 shadow-lg shadow-brand-orange/30"
-          >
-            {t('nav.tryFree')}
-            <ArrowRight size={18} />
-          </a>
-          <button
-            type="button"
-            onClick={() => scrollTo('#catalog')}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 hover:border-brand-orange text-white font-semibold text-base transition-colors duration-200"
-          >
-            {t('hero.ctaCatalog')}
-          </button>
+    <section id="hero" className="relative pt-20">
+      <div className="section-shell grid items-center gap-12 !pb-12 !pt-12 sm:!pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:!pb-20 lg:!pt-20">
+        <div>
+          <p className="eyebrow flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-brand-orange" aria-hidden="true" />
+            {t('hero.kicker')}
+          </p>
+          <h1 className="font-display text-[2.65rem] font-bold leading-[1.06] tracking-[-0.045em] sm:text-6xl lg:text-[4rem]">
+            {t('hero.title1')}{' '}
+            <span className="relative inline text-[#9c4700]">{t('hero.title2')}</span>
+          </h1>
+          <p className="body-copy mt-6 max-w-xl">{t('hero.subtitle')}</p>
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+            <a href="#catalog" className="button-primary">
+              {t('hero.ctaCatalog')} <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <a href="https://playstand.app/login" target="_blank" rel="noopener noreferrer" className="text-link justify-center sm:px-3">
+              {t('hero.ctaFree')} <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-brand-muted">{t('hero.microcopy')}</p>
         </div>
 
-        <div className="mt-12 text-sm text-white/30 max-w-xl mx-auto space-y-2">
-          <p>{t('hero.mvpLine1')}</p>
-          <p>{t('hero.mvpLine2')}</p>
+        <figure className="relative min-w-0 overflow-hidden rounded-[2rem] border border-[#e8dbc7] bg-[#f1e7d8] p-5 sm:p-7">
+          <div className="flex items-start justify-between gap-4">
+            <p className="max-w-[15rem] font-display text-2xl font-semibold leading-tight sm:text-3xl">{t('hero.visualLabel')}</p>
+            <span className="rounded-pill border border-brand-dark/20 px-3 py-1 text-xs font-bold tracking-wider" aria-hidden="true">STAND</span>
+          </div>
+          <div className="relative mt-4 aspect-[1.2]">
+            <div className="absolute inset-x-4 inset-y-6 rounded-full bg-[#ffca89]/65" aria-hidden="true" />
+            <img
+              src="/images/pantalla_horizontal.webp"
+              alt={t('hero.visualAlt')}
+              width="1100"
+              height="733"
+              fetchPriority="high"
+              className="absolute -left-[25%] top-[2%] w-[130%] max-w-none"
+            />
+            <img src="/images/pantalla_vertical.webp" alt="" width="900" height="600" className="absolute -right-[35%] top-[12%] w-[105%] max-w-none" />
+          </div>
+          <div className="relative flex flex-wrap gap-2">
+            {[{ Icon: MousePointer2, key: 'chip1' }, { Icon: Paintbrush, key: 'chip2' }, { Icon: Contact, key: 'chip3' }].map(({ Icon, key }) => (
+              <span key={key} className="inline-flex items-center gap-1.5 rounded-pill bg-brand-paper px-3 py-2 text-xs font-semibold">
+                <Icon size={14} aria-hidden="true" /> {t(`hero.${key}`)}
+              </span>
+            ))}
+          </div>
+          <figcaption className="relative mt-4 text-xs leading-relaxed text-brand-muted">{t('hero.visualCaption')}</figcaption>
+        </figure>
+      </div>
+      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+        <div className="flex items-center gap-4 border-y border-brand-line py-5">
+          <UsersRound size={24} className="shrink-0" aria-hidden="true" />
+          <p className="text-sm text-brand-muted">{t('hero.proof', { count: pilots[0].userCount })}</p>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-dark to-transparent pointer-events-none" />
     </section>
   )
 }

@@ -1,153 +1,115 @@
-import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { useEffect, useRef } from 'react'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
 import { useI18n } from '../i18n/useI18n.js'
 
-const LINK_HREFS = [
-  { key: 'about', href: '#about', minClass: 'min-w-[10.25rem]' },
-  { key: 'catalog', href: '#catalog', minClass: 'min-w-[5.75rem]' },
-  { key: 'pricing', href: '#pricing', minClass: 'min-w-[4.875rem]' },
-  { key: 'contact', href: '#contact', minClass: 'min-w-[5.75rem]' },
+const LINKS = [
+  { key: 'howItWorks', href: '#how-it-works' },
+  { key: 'catalog', href: '#catalog' },
+  { key: 'pricing', href: '#pricing' },
 ]
 
-const LOGO_IMAGE = '/images/stand-logo.png'
-
-function LanguageSwitch({ className = '' }) {
+function LanguageSwitch() {
   const { locale, setLocale, t } = useI18n()
+
   return (
-    <div
-      className={`inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/[0.04] p-0.5 ${className}`}
-      role="group"
-      aria-label={t('common.langSwitcher')}
-    >
-      <button
-        type="button"
-        onClick={() => setLocale('es')}
-        className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-colors ${
-          locale === 'es' ? 'bg-brand-orange text-white' : 'text-white/60 hover:text-white'
-        }`}
-        aria-pressed={locale === 'es'}
-        aria-label={t('common.langEs')}
-      >
-        ES
-      </button>
-      <button
-        type="button"
-        onClick={() => setLocale('en')}
-        className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-colors ${
-          locale === 'en' ? 'bg-brand-orange text-white' : 'text-white/60 hover:text-white'
-        }`}
-        aria-pressed={locale === 'en'}
-        aria-label={t('common.langEn')}
-      >
-        EN
-      </button>
+    <div className="flex shrink-0 items-center" role="group" aria-label={t('common.langSwitcher')}>
+      {['es', 'en'].map((language) => (
+        <button
+          key={language}
+          type="button"
+          onClick={() => setLocale(language)}
+          aria-pressed={locale === language}
+          aria-label={t(language === 'es' ? 'common.langEs' : 'common.langEn')}
+          className={`min-h-12 min-w-12 rounded-control text-xs font-bold transition-colors ${
+            locale === language ? 'bg-brand-dark text-white' : 'text-brand-muted hover:bg-black/5'
+          }`}
+        >
+          {language.toUpperCase()}
+        </button>
+      ))}
     </div>
   )
 }
 
-export default function Navbar() {
+export default function Navbar({ menuOpen, onMenuChange }) {
   const { t } = useI18n()
-  const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [logoError, setLogoError] = useState(false)
+  const toggleRef = useRef(null)
+  const headerRef = useRef(null)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const wideScreen = window.matchMedia('(min-width: 1024px)')
+    const closeOnResize = (event) => {
+      if (event.matches) onMenuChange(false)
+    }
+    wideScreen.addEventListener('change', closeOnResize)
+    return () => wideScreen.removeEventListener('change', closeOnResize)
+  }, [onMenuChange])
 
-  const handleLink = (e, href) => {
-    e.preventDefault()
-    setOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        onMenuChange(false)
+        toggleRef.current?.focus()
+      }
+    }
+    const onPointerDown = (event) => {
+      if (!headerRef.current?.contains(event.target)) onMenuChange(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
+  }, [menuOpen, onMenuChange])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-glass' : 'bg-transparent'}`}>
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-        <a href="#" onClick={(e) => handleLink(e, '#')} className="flex items-end gap-1.5 sm:gap-2 group shrink-0">
-          <span className="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-none tracking-tight text-white">
-            stand
-          </span>
-          <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center overflow-hidden shrink-0 mb-0.5 md:mb-1">
-            {!logoError ? (
-              <img
-                src={LOGO_IMAGE}
-                alt=""
-                className="w-full h-full object-contain"
-                onError={() => setLogoError(true)}
-              />
-            ) : (
-              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-brand-orange" aria-hidden />
-            )}
-          </div>
+    <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 border-b border-brand-line/70 bg-brand-paper/95 backdrop-blur-md">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-3 focus:z-[60] focus:rounded-control focus:bg-brand-dark focus:px-4 focus:py-3 focus:text-white">
+        {t('common.skipLink')}
+      </a>
+      <nav aria-label={t('common.navigation')} className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-3 px-6 sm:px-8">
+        <a href="#hero" onClick={() => onMenuChange(false)} aria-label="Stand" className="flex min-h-12 shrink-0 items-center">
+          <img src="/images/logo_stand_letters_black.webp" alt="Stand" width="400" height="113" className="h-auto w-28 sm:w-32" />
         </a>
-
-        <div className="hidden md:flex items-center gap-5 lg:gap-8">
-          <ul className="flex items-center gap-6 lg:gap-8">
-            {LINK_HREFS.map((link) => (
-              <li key={link.href} className="flex justify-center">
-                <a
-                  href={link.href}
-                  onClick={(e) => handleLink(e, link.href)}
-                  className={`inline-block text-center text-sm font-medium text-white/70 hover:text-white transition-colors ${link.minClass}`}
-                >
-                  {t(`nav.${link.key}`)}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <LanguageSwitch />
-          <a
-            href="https://playstand.app/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center min-w-[11.5rem] px-5 py-2 rounded-full bg-brand-orange hover:bg-brand-orange-dark text-white text-sm font-semibold transition-colors duration-200 shrink-0 text-center"
-          >
-            {t('nav.tryFree')}
-          </a>
+        <div className="hidden items-center gap-8 lg:flex">
+          {LINKS.map((link) => (
+            <a key={link.key} href={link.href} className="flex min-h-12 items-center text-sm font-semibold text-brand-muted hover:text-brand-dark">
+              {t(`nav.${link.key}`)}
+            </a>
+          ))}
         </div>
-
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-4">
           <LanguageSwitch />
+          <a href="https://playstand.app/login" target="_blank" rel="noopener noreferrer" className="button-secondary hidden lg:inline-flex">
+            {t('nav.tryFree')} <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
           <button
-            className="text-white p-1"
-            onClick={() => setOpen(!open)}
-            aria-label={t('nav.openMenu')}
+            ref={toggleRef}
             type="button"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={t(menuOpen ? 'nav.closeMenu' : 'nav.openMenu')}
+            onClick={() => onMenuChange(!menuOpen)}
+            className="flex h-12 w-12 items-center justify-center rounded-control border border-brand-line lg:hidden"
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
-
-      {open && (
-        <div className="md:hidden bg-brand-dark border-t border-white/10 px-6 pb-6 pt-4">
-          <ul className="flex flex-col gap-4">
-            {LINK_HREFS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={(e) => handleLink(e, link.href)}
-                  className="block text-base font-medium text-white/70 hover:text-white transition-colors"
-                >
-                  {t(`nav.${link.key}`)}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <a
-            href="https://playstand.app/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 block text-center px-5 py-3 rounded-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold transition-colors"
-          >
-            {t('nav.tryFree')}
+      <div id="mobile-navigation" hidden={!menuOpen} className="border-t border-brand-line bg-brand-paper px-6 py-5 lg:hidden">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2">
+          {[...LINKS, { key: 'contact', href: '#contact' }].map((link) => (
+            <a key={link.key} href={link.href} onClick={() => onMenuChange(false)} className="flex min-h-12 items-center rounded-control px-3 text-base font-semibold hover:bg-white">
+              {t(`nav.${link.key}`)}
+            </a>
+          ))}
+          <a href="https://playstand.app/login" target="_blank" rel="noopener noreferrer" onClick={() => onMenuChange(false)} className="button-primary mt-2">
+            {t('nav.tryFree')} <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </div>
-      )}
+      </div>
     </header>
   )
 }

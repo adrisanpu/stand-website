@@ -1,44 +1,38 @@
-import { Zap, Users, Trophy, Contact } from 'lucide-react'
+import { Contact, MousePointer2, Paintbrush } from 'lucide-react'
 import { useI18n } from '../i18n/useI18n.js'
 
-const PILLAR_ICONS = [Zap, Users, Contact, Trophy]
+const ICONS = [MousePointer2, Paintbrush, Contact]
 
 export default function About() {
   const { messages } = useI18n()
-  const pillars = messages.about.pillars
+  const copy = messages.about
 
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-16">
-          <p className="text-brand-orange font-semibold text-sm uppercase tracking-widest mb-4">{messages.about.kicker}</p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6">
-            {messages.about.title1}
-            <br />
-            <span className="text-gradient">{messages.about.title2}</span>
-          </h2>
-          <p className="text-white/60 text-lg leading-relaxed">{messages.about.intro}</p>
+    <section id="about" className="section-shell">
+      <div className="grid gap-8 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
+        <div>
+          <p className="eyebrow">{copy.kicker}</p>
+          <h2 className="section-title">{copy.title1} <span className="text-[#9c4700]">{copy.title2}</span></h2>
+          <p className="body-copy mt-5">{copy.intro}</p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((p, i) => {
-            const Icon = PILLAR_ICONS[i]
-            return (
-              <div
-                key={p.title}
-                className="card-hover p-8 rounded-card border border-white/10 bg-white/[0.03] flex flex-col gap-5"
-              >
-                <div className="w-12 h-12 rounded-control bg-brand-orange/20 flex items-center justify-center">
-                  <Icon size={24} className="text-brand-orange" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">{p.title}</h3>
-                  <p className="text-white/55 leading-relaxed text-sm">{p.description}</p>
-                </div>
+        <div className="flex flex-col justify-center border-l-2 border-brand-orange pl-6">
+          <h3 className="font-display text-xl font-semibold">{copy.problemTitle}</h3>
+          <p className="mt-3 leading-relaxed text-brand-muted">{copy.problemBody}</p>
+        </div>
+      </div>
+      <div className="mt-12 grid gap-5 md:grid-cols-3">
+        {copy.pillars.map((pillar, index) => {
+          const Icon = ICONS[index]
+          return (
+            <article key={pillar.title} className="rounded-card border border-brand-line bg-white p-7">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-control bg-brand-paper">
+                <Icon size={23} aria-hidden="true" />
               </div>
-            )
-          })}
-        </div>
+              <h3 className="font-display text-xl font-semibold">{pillar.title}</h3>
+              <p className="mt-3 text-base leading-relaxed text-brand-muted">{pillar.description}</p>
+            </article>
+          )
+        })}
       </div>
     </section>
   )

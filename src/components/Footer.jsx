@@ -1,17 +1,14 @@
-import { useState } from 'react'
 import { Instagram, Linkedin, Twitter } from 'lucide-react'
 import { useI18n } from '../i18n/useI18n.js'
 
-const LOGO_IMAGE = '/images/stand-logo.png'
+const LOGO_IMAGE = '/images/logo_stand_letters_black.webp'
 
 const NAV_HREFS = [
-  { key: 'about', href: '#about' },
+  { key: 'howItWorks', href: '#how-it-works' },
   { key: 'catalog', href: '#catalog' },
   { key: 'pricing', href: '#pricing' },
   { key: 'contact', href: '#contact' },
 ]
-
-const LEGAL_KEYS = ['privacy', 'legalNotice', 'cookies']
 
 const socialLinks = [
   { Icon: Instagram, href: 'https://instagram.com/playstand_', label: 'Instagram' },
@@ -21,96 +18,58 @@ const socialLinks = [
 
 export default function Footer() {
   const { t, messages } = useI18n()
-  const [logoError, setLogoError] = useState(false)
-
-  const scrollTo = (href) => {
-    if (href === '#') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      return
-    }
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
-
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-white/10 py-12 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
-          <div className="flex flex-col gap-4">
-            <button
-              type="button"
-              onClick={() => scrollTo('#')}
-              className="flex items-center gap-2 group w-fit"
-            >
-              <div className="w-8 h-8 flex items-center justify-center overflow-hidden shrink-0">
-                {!logoError ? (
-                  <img
-                    src={LOGO_IMAGE}
-                    alt="Stand"
-                    className="w-full h-full object-contain"
-                    onError={() => setLogoError(true)}
-                  />
-                ) : (
-                  <span className="font-black text-white text-lg">S</span>
-                )}
-              </div>
-              <span className="font-extrabold text-xl tracking-tight text-white">Stand</span>
-            </button>
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">{messages.footer.tagline}</p>
-            <div className="flex gap-3 mt-2">
-              {socialLinks.map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-9 h-9 rounded-control border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-orange transition-colors"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">{messages.footer.sections}</p>
-            <ul className="flex flex-col gap-3">
-              {NAV_HREFS.map((link) => (
-                <li key={link.href}>
-                  <button
-                    type="button"
-                    onClick={() => scrollTo(link.href)}
-                    className="text-sm text-white/40 hover:text-white transition-colors text-left"
-                  >
-                    {t(`nav.${link.key}`)}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">{messages.footer.legal}</p>
-            <ul className="flex flex-col gap-3">
-              {LEGAL_KEYS.map((key) => (
-                <li key={key}>
-                  <a href="#" className="text-sm text-white/40 hover:text-white transition-colors">
-                    {messages.footer[key]}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer id="footer" className="border-t border-brand-line bg-brand-paper px-6 py-8 text-brand-ink">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-2">
+          <img
+            src={LOGO_IMAGE}
+            alt="Stand"
+            width="400"
+            height="113"
+            className="h-auto w-28 self-start object-contain"
+          />
+          <p className="text-sm text-brand-muted">{messages.footer.tagline}</p>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/30">{t('footer.copyright', { year })}</p>
-          <p className="text-xs text-white/20">{messages.footer.madeIn}</p>
+        <nav aria-label={messages.footer.sections} className="flex flex-wrap gap-x-5 gap-y-2">
+          {NAV_HREFS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm text-brand-muted underline-offset-4 hover:text-brand-ink hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-orange"
+            >
+              {t(`nav.${link.key}`)}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <a
+            href="mailto:contact@playstand.app"
+            className="text-sm font-semibold text-brand-ink underline decoration-brand-orange underline-offset-4 hover:text-brand-orange-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-orange"
+          >
+            {messages.footer.email}
+          </a>
+          {socialLinks.map(({ Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${messages.footer.social}: ${label}`}
+              className="rounded-sm text-brand-muted hover:text-brand-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-orange"
+            >
+              <Icon size={18} aria-hidden="true" />
+            </a>
+          ))}
         </div>
       </div>
+      <p className="mx-auto mt-6 max-w-6xl border-t border-brand-line pt-4 text-xs text-brand-muted">
+        {t('footer.copyright', { year })}
+      </p>
     </footer>
   )
 }

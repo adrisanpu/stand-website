@@ -19,10 +19,15 @@ export default {
           orange: BRAND_ORANGE,
           'orange-dark': BRAND_ORANGE_DARK,
           'orange-light': BRAND_ORANGE_LIGHT,
+          paper: '#faf8f4',
+          ink: BRAND_DARK,
+          muted: '#57534e',
+          line: '#dedbd5',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['DM Sans', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
       },
       borderRadius: {
         card: '16px',

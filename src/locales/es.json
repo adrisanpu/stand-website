@@ -1,130 +1,167 @@
 {
   "seo": {
-    "title": "Stand | playstand.app — Experiencias gamificadas para eventos",
-    "description": "Stand (playstand.app) — Experiencias gamificadas para eventos corporativos, ferias y activaciones de marca. Pantallas táctiles o móvil. Trivials, ruletas, retos y más."
+    "title": "Stand | Juegos de marca para ferias y activaciones",
+    "description": "Crea experiencias de marca participativas para ferias y activaciones: juegos para mejorar la experiencia de cada visita y facilitar conversaciones y contactos opcionales."
   },
   "common": {
     "langSwitcher": "Idioma del sitio",
+    "navigation": "Navegación principal",
     "langEs": "Español",
     "langEn": "English",
+    "skipLink": "Saltar al contenido",
     "photoPrev": "Foto anterior",
-    "photoNext": "Foto siguiente"
+    "photoNext": "Foto siguiente",
+    "photoAlt": "Vista del juego {{number}}",
+    "photoCounter": "Foto {{current}} de {{total}}"
   },
   "nav": {
-    "about": "Sobre nosotros",
+    "howItWorks": "Cómo funciona",
     "catalog": "Catálogo",
     "pricing": "Precios",
     "contact": "Contacto",
-    "tryFree": "Pruébalo gratis",
-    "openMenu": "Abrir menú"
+    "tryFree": "Probar gratis",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
-    "title1": "Transforma tus",
-    "title2": "eventos en juego",
-    "subtitle": "Stand crea experiencias gamificadas únicas para eventos corporativos, ferias y activaciones de marca. Trivials, ruletas, retos y mucho más.",
-    "ctaCatalog": "Ver catálogo",
-    "mvpLine1": "MVP probado en pilotos reales con marcas y organizadores.",
-    "mvpLine2": "Más de 250 participantes en pilotos hasta la fecha."
+    "kicker": "Juegos de marca para eventos",
+    "title1": "Haz que cada visita",
+    "title2": "se convierta en experiencia",
+    "subtitle": "Stand ayuda a marcas y agencias a activar sus espacios con juegos personalizables que invitan a participar, mejoran la experiencia del evento y pueden abrir conversaciones con contactos opcionales.",
+    "ctaCatalog": "Explorar experiencias",
+    "ctaFree": "Probar gratis",
+    "microcopy": "Para ferias y activaciones. La captura de contactos es opcional.",
+    "visualAlt": "Pantallas táctiles horizontal y vertical para activaciones presenciales",
+    "visualCaption": "Pantallas para activaciones presenciales. El hardware se ofrece como servicio adicional.",
+    "proof": "{{count}} participantes en un piloto de ocio",
+    "visualLabel": "Tu marca. Su próximo juego.",
+    "chip1": "Participación",
+    "chip2": "Personalización",
+    "chip3": "Contactos opcionales"
   },
   "about": {
-    "kicker": "Sobre nosotros",
-    "title1": "El juego que transforma",
-    "title2": "la forma de conectar",
-    "intro": "Conectamos marcas con su público a través del juego. Nuestro objetivo: que cada persona que pase por tu stand viva una experiencia memorable y que tú puedas medir el impacto y captar leads para seguir vendiendo.",
+    "kicker": "Una experiencia con propósito",
+    "title1": "Más que atraer miradas,",
+    "title2": "invita a participar",
+    "intro": "Para marcas y agencias en ferias y activaciones, Stand convierte un momento de paso en una experiencia de marca participativa: un juego para disfrutar y una oportunidad para iniciar una conversación.",
     "pillars": [
       {
-        "title": "Activación inmediata",
-        "description": "Tus participantes se enganchan desde el primer segundo. Sin curvas de aprendizaje, solo diversión y competición."
+        "title": "Una experiencia para recordar",
+        "description": "Propón una dinámica clara y participativa que aporte un momento agradable a la visita y encaje con el ambiente de tu evento."
       },
       {
-        "title": "Experiencias a medida",
-        "description": "Adaptamos cada juego a tu marca, sector y objetivos. Desde formación interna hasta activaciones en ferias."
+        "title": "Tu marca, dentro del juego",
+        "description": "Personaliza la experiencia visual y, según el plan, adapta también el contenido y las mecánicas a tu activación."
       },
       {
-        "title": "Leads y contactos",
-        "description": "Desde el panel decides si y cuándo pedir datos: captura opcional, poca fricción en sala y exportación para seguir la conversación después del evento."
+        "title": "Conversaciones y contactos opcionales",
+        "description": "Si encaja con tu dinámica, activa formularios opcionales para participantes y consulta o exporta los resultados disponibles."
+      }
+    ],
+    "problemTitle": "Una visita puede pasar de largo",
+    "problemBody": "En una feria, muchas personas pasan por delante y la conversación puede quedarse en el stand. Una experiencia participativa ofrece un motivo para detenerse, disfrutar y empezar a conversar."
+  },
+  "howItWorks": {
+    "kicker": "Cómo funciona",
+    "title": "De la idea a una experiencia participativa",
+    "subtitle": "Elige una dinámica, ajústala a tu marca y decide cómo quieres invitar a participar.",
+    "steps": [
+      {
+        "title": "Elige el juego",
+        "description": "Escoge una experiencia del catálogo según el tipo de interacción que buscas para tu feria o activación."
       },
       {
-        "title": "Resultados medibles",
-        "description": "Dashboard en tiempo real con métricas de participación, engagement y aprendizaje para justificar el ROI."
+        "title": "Adáptalo a tu marca",
+        "description": "Personaliza la imagen del juego. Para una propuesta a medida, puedes consultar las opciones de diseño y adaptación."
+      },
+      {
+        "title": "Activa la participación",
+        "description": "Invita a las personas a jugar y, si lo necesitas, configura formularios opcionales para facilitar el seguimiento después del evento."
       }
     ]
   },
   "clientLogos": {
-    "kicker": "Pilotos",
-    "title": "Experiencias en vivo",
+    "kicker": "Una experiencia piloto",
+    "title": "Stand en acción",
+    "intro": "Un ejemplo de cómo una dinámica de juego puede dar vida a un espacio.",
     "pilots": {
       "zoco": {
         "logoAlt": "Zoco Dance Club",
-        "description": "Piloto en una discoteca: llevamos Stand al club para activar la pista con dos juegos pensados para movilizar al público y generar interacción en un entorno de alto volumen y ritmo rápido.",
-        "statsGames": "Activaciones: {{games}}",
-        "statsUsers": "{{count}} usuarios en el piloto"
+        "description": "En un piloto en una discoteca, llevamos Stand al local con dos juegos pensados para animar a participar en un entorno nocturno.",
+        "statsGames": "Juegos utilizados: {{games}}",
+        "statsUsers": "{{count}} participantes en el piloto",
+        "context": "Piloto de ocio nocturno en Zoco Dance Club; no es un caso de feria ni una activación de marca."
       }
     }
   },
   "catalog": {
     "kicker": "Catálogo",
-    "title1": "Experiencias que",
-    "title2": "no se olvidan",
-    "subtitle": "Elige la experiencia que mejor encaja con tus objetivos. Todas completamente personalizables con tu imagen de marca.",
-    "scrollHint": "Desliza para ver todos los juegos →",
-    "learnMore": "Saber más →",
+    "title1": "Elige cómo quieres",
+    "title2": "activar tu espacio",
+    "subtitle": "Juegos con mecánicas distintas para ferias y activaciones. Personaliza la experiencia visual para acercarla a tu marca.",
+    "scrollHint": "Desliza para ver todas las experiencias",
+    "learnMore": "Consultar esta experiencia",
+    "featuredLabel": "Para ferias y activaciones",
+    "socialLabel": "Para conectar a las personas",
     "games": [
       {
-        "tag": "Ingenio & Velocidad",
+        "tag": "Ingenio y velocidad",
         "title": "L3TRAS",
-        "description": "Forma la palabra objetivo con tus letras antes que el resto. Ingenio y velocidad con ranking opcional."
+        "description": "Ordena tus letras para formar la palabra objetivo antes que el resto. El ranking es opcional."
       },
       {
-        "tag": "Suerte & Premio",
+        "tag": "Suerte y premios",
         "title": "RULET4",
-        "description": "Ruleta de premios o retos personalizable. Sorteos, dinámicas o animar al público en formato sala."
+        "description": "Personaliza una ruleta de premios o retos para proponer sorteos y dinámicas a los visitantes."
       },
       {
-        "tag": "Precisión",
+        "tag": "Precisión y reflejos",
         "title": "T1MER",
-        "description": "Pulsa en el momento exacto que marca el temporizador. Prueba de reflejos; individual o en sala con ranking."
+        "description": "Pulsa en el momento exacto que marca el temporizador. Se puede jugar en solitario o en sala con ranking."
       },
       {
-        "tag": "Networking",
+        "tag": "Conectar a las personas",
         "title": "EMPAREJA2",
-        "description": "Encuentra a tu pareja asignada en la sala e intercambiad códigos. Ideal para networking y que la gente se mueva."
+        "description": "Encuentra en la sala a la persona asignada e intercambiad códigos. Una dinámica para facilitar nuevas conversaciones."
       },
       {
-        "tag": "Social",
+        "tag": "Conectar a las personas",
         "title": "CUPIDO",
-        "description": "Empareja por cuestionario; semáforo de compatibilidad. Encuentra a tu pareja y validad el código. Muy social."
+        "description": "Responde al cuestionario, descubre la compatibilidad en un semáforo y encuentra a tu pareja para validar el código."
       },
       {
         "tag": "Romper el hielo",
         "title": "SEMAFORO",
-        "description": "Rojo/amarillo/verde según estado. Quiz cruzado para ver si os conocéis. Romper el hielo en eventos."
+        "description": "Responde a un quiz cruzado y descubre el resultado con un semáforo de colores: una excusa para conversar."
       },
       {
-        "tag": "Presentación",
+        "tag": "Contenido de marca",
         "title": "INFOCARDS",
-        "description": "Tarjetas visuales con tu información. Sube PDF o imágenes y la IA genera las tarjetas. Para ferias y presentaciones."
+        "description": "Presenta información en tarjetas visuales. Sube un PDF o imágenes para generar las tarjetas con IA."
       }
     ]
   },
+  "mobileCta": {
+    "label": "Ver planes",
+    "note": "Starter gratis · Event desde 24 €"
+  },
   "pricing": {
-    "kicker": "Precios",
-    "title1": "Planes pensados",
-    "title2": "para cada evento",
-    "subtitle": "Sin sorpresas. Sin contratos largos. Elige el plan que se adapta a tu próximo evento.",
-    "billingDay": "1 día",
-    "billingWeek": "1 semana",
-    "billingWeekOff": "40% off",
-    "popular": "popular",
-    "tryFreeBadge": "Pruébalo GRATIS",
-    "footerNote": "Todos los precios son orientativos. Contacta para un presupuesto personalizado.",
+    "kicker": "Precios claros",
+    "title1": "Elige el acceso",
+    "title2": "para tu activación",
+    "subtitle": "Desde una primera prueba gratuita hasta una experiencia con servicios a medida.",
+    "durationLabel": "Duración del plan Event",
+    "billingDay": "24 horas",
+    "billingWeek": "7 días",
+    "recommended": "Recomendado para eventos",
+    "footerNote": "Importes en euros. En Enterprise, los servicios opcionales se presupuestan aparte.",
     "plans": {
       "starter": {
         "name": "Starter",
-        "description": "Ideal para entender cómo funciona la plataforma antes de lanzar un evento real.",
-        "priceNote": "No necesitas tarjeta. Configuración en menos de 5 minutos.",
-        "priceUnit": "/∞",
-        "cta": "Probar GRATIS",
+        "description": "Para conocer la plataforma antes de preparar una activación.",
+        "price": "0 €",
+        "priceUnit": "gratis",
+        "cta": "Probar Starter",
         "features": [
           "Acceso a la plataforma",
           "1 juego activo",
@@ -136,75 +173,102 @@
       },
       "event": {
         "name": "Event",
-        "description": "Ideal para eventos puntuales, activaciones presenciales y acciones promocionales.",
-        "priceUnitDay": "/24h",
-        "priceNoteDay": "pago único",
-        "priceUnitWeek": "/semana",
-        "priceNoteWeek": "40% de descuento",
-        "cta": "Contratar acceso",
+        "description": "Acceso para una feria, evento o activación puntual.",
+        "priceDay": "24 €",
+        "priceUnitDay": "/ 24 horas",
+        "priceNoteDay": "Pago único por el periodo elegido",
+        "priceWeek": "99 €",
+        "priceUnitWeek": "/ 7 días",
+        "priceNoteWeek": "Pago único por 7 días de acceso",
+        "cta": "Elegir Event",
         "featureWeekAlt": "Acceso completo durante 7 días",
         "features": [
-          "Acceso completo durante 24h",
+          "Acceso completo durante 24 horas",
           "Juegos ilimitados",
           "Jugadores ilimitados",
-          "Configuración rápida del evento",
           "Personalización visual del juego",
-          "Realización de sorteos",
-          "Formularios opcionales para jugadores (configurables desde el panel)",
-          "Vista y exportación básica de resultados"
+          "Posibilidad de realizar sorteos",
+          "Formularios opcionales para participantes, configurables desde el panel",
+          "Consulta y exportación básica de resultados"
         ]
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "Activaciones gamificadas a medida para marcas y eventos profesionales.",
-        "priceNote": "desde",
-        "priceModularNote": "Precio base. Al añadir servicios opcionales el importe aumenta.",
+        "description": "Para activaciones que necesitan servicios o adaptaciones adicionales.",
+        "priceFrom": "Desde 99 €",
+        "priceModularNote": "El precio final depende de los servicios opcionales incluidos en la propuesta.",
         "cta": "Solicitar propuesta",
-        "features": ["Todo lo incluido en el plan Event"],
-        "servicesTitle": "Servicios a escoger:",
+        "features": [
+          "Todo lo incluido en el plan Event"
+        ],
+        "servicesTitle": "Servicios opcionales",
         "services": [
           "Pantallas táctiles e instalaciones interactivas",
           "Logística y transporte al evento",
-          "Diseño visual personalizado (branding completo)",
+          "Diseño visual personalizado",
           "Adaptación de contenidos y mecánicas de juego",
-          "Analítica de datos post-evento",
-          "Personal on-site",
+          "Analítica de datos postevento",
+          "Personal en el evento",
           "Merchandising y premios personalizados"
         ]
       }
     }
   },
+  "faq": {
+    "kicker": "Preguntas frecuentes",
+    "title": "Lo que conviene saber",
+    "items": [
+      {
+        "question": "¿Qué es Stand?",
+        "answer": "Stand es una plataforma de juegos personalizables para marcas y agencias que preparan ferias y activaciones. Sus dinámicas invitan a participar y pueden ayudar a abrir conversaciones con visitantes."
+      },
+      {
+        "question": "¿Puedo recoger contactos de participantes?",
+        "answer": "El plan Event incluye formularios opcionales que se configuran desde el panel. Puedes decidir si la dinámica de tu evento los necesita; también hay consulta y exportación básica de resultados."
+      },
+      {
+        "question": "¿Puedo adaptar los juegos a mi marca?",
+        "answer": "Los planes incluyen opciones de personalización visual. Enterprise ofrece, como servicios opcionales, diseño personalizado y adaptación de contenidos o mecánicas."
+      },
+      {
+        "question": "¿Cuánto cuesta usar Stand en un evento?",
+        "answer": "Starter es gratis e incluye un juego activo y hasta 25 jugadores. Event cuesta 24 € por 24 horas o 99 € por 7 días, con pago único. Enterprise empieza en 99 €; los servicios opcionales se cotizan aparte."
+      },
+      {
+        "question": "¿Qué tipos de juegos hay?",
+        "answer": "El catálogo incluye retos de palabras, ruleta de premios o retos, pruebas de reflejos, juegos para conectar participantes, quizzes y tarjetas visuales de contenido."
+      },
+      {
+        "question": "¿Qué incluye una propuesta Enterprise?",
+        "answer": "Puedes consultar servicios opcionales como pantallas e instalaciones interactivas, logística, diseño, adaptación de contenidos, analítica postevento, personal o premios. El alcance y el precio se definen en la propuesta."
+      }
+    ]
+  },
   "contact": {
     "kicker": "Contacto",
-    "title1": "Hablemos de",
-    "title2": "tu próximo evento",
-    "intro": "Cuéntanos qué tienes en mente. Te respondemos en menos de 24 horas con una propuesta personalizada.",
-    "emailDirect": "Email directo",
-    "whatsapp": "WhatsApp",
-    "whatsappSoon": "Próximamente",
-    "sentTitle": "¡Mensaje enviado!",
-    "sentBody": "Te respondemos en menos de 24 horas.",
-    "labelName": "Nombre *",
-    "labelEmail": "Email *",
-    "labelMessage": "Mensaje *",
+    "title1": "Hablemos de tu",
+    "title2": "próxima activación",
+    "intro": "Cuéntanos qué marca o agencia representas, qué evento preparas y qué experiencia quieres ofrecer.",
+    "emailDirect": "Escríbenos directamente",
+    "formTitle": "Cuéntanos tu idea",
+    "labelName": "Nombre",
+    "labelEmail": "Email",
+    "labelMessage": "¿Qué evento estás preparando?",
     "placeholderName": "Tu nombre",
     "placeholderEmail": "tu@empresa.com",
-    "placeholderMessage": "Cuéntanos sobre tu evento: fecha, número de asistentes, tipo de experiencia que buscas...",
-    "submit": "Enviar mensaje",
-    "privacyNote": "Al enviar aceptas nuestra política de privacidad.",
+    "placeholderMessage": "Cuéntanos sobre la feria o activación, el tipo de experiencia que buscas y cualquier detalle que te ayude a explicarla.",
+    "submit": "Preparar email",
+    "draftNote": "Se abrirá un borrador en tu aplicación de correo. Revísalo y envíalo tú; este sitio no envía el mensaje.",
     "mailSubject": "Consulta de {{name}} — Stand",
     "mailBodyName": "Nombre",
     "mailBodyEmail": "Email",
     "mailBodyMessage": "Mensaje"
   },
   "footer": {
-    "tagline": "Experiencias gamificadas para eventos corporativos y activaciones de marca.",
-    "sections": "Secciones",
-    "legal": "Legal",
-    "privacy": "Política de privacidad",
-    "legalNotice": "Aviso legal",
-    "cookies": "Cookies",
-    "copyright": "© {{year}} Stand. Todos los derechos reservados.",
-    "madeIn": "Hecho con 🧡 en España"
+    "tagline": "Juegos de marca para ferias y activaciones.",
+    "sections": "Explora",
+    "email": "Email",
+    "social": "Síguenos",
+    "copyright": "© {{year}} Stand."
   }
 }
