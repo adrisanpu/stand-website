@@ -71,7 +71,7 @@ export default function Navbar({ menuOpen, onMenuChange }) {
       </a>
       <nav aria-label={t('common.navigation')} className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-3 px-6 sm:px-8">
         <a href="#hero" onClick={() => onMenuChange(false)} aria-label="Stand" className="flex min-h-12 shrink-0 items-center">
-          <img src="/images/logo_stand_letters_black.webp" alt="Stand" width="400" height="113" className="h-auto w-28 sm:w-32" />
+          <img src="/images/logo_stand_letters_black.webp" alt="Stand" width="400" height="113" className="h-auto w-36 sm:w-40" />
         </a>
         <div className="hidden items-center gap-8 lg:flex">
           {LINKS.map((link) => (
