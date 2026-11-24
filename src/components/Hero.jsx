@@ -1,6 +1,5 @@
-import { ArrowRight, ArrowUpRight, Contact, MousePointer2, Paintbrush, UsersRound } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, BarChart3, MousePointer2, UsersRound } from 'lucide-react'
 import { useI18n } from '../i18n/useI18n.js'
-import { pilots } from '../data/pilots.js'
 
 export default function Hero() {
   const { t } = useI18n()
@@ -47,7 +46,7 @@ export default function Hero() {
             <img src="/images/pantalla_vertical.webp" alt="" width="900" height="600" className="absolute -right-[35%] top-[12%] w-[105%] max-w-none" />
           </div>
           <div className="relative flex flex-wrap gap-2">
-            {[{ Icon: MousePointer2, key: 'chip1' }, { Icon: Paintbrush, key: 'chip2' }, { Icon: Contact, key: 'chip3' }].map(({ Icon, key }) => (
+            {[{ Icon: MousePointer2, key: 'chip1' }, { Icon: BarChart3, key: 'chip2' }].map(({ Icon, key }) => (
               <span key={key} className="inline-flex items-center gap-1.5 rounded-pill bg-brand-paper px-3 py-2 text-xs font-semibold">
                 <Icon size={14} aria-hidden="true" /> {t(`hero.${key}`)}
               </span>
@@ -59,7 +58,7 @@ export default function Hero() {
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
         <div className="flex items-center gap-4 border-y border-brand-line py-5">
           <UsersRound size={24} className="shrink-0" aria-hidden="true" />
-          <p className="text-sm text-brand-muted">{t('hero.proof', { count: pilots[0].userCount })}</p>
+          <p className="text-sm text-brand-muted">{t('hero.proof')}</p>
         </div>
       </div>
     </section>
