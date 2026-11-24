@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "Stand | Juegos de marca para ferias y activaciones",
-    "description": "Crea experiencias de marca participativas para ferias y activaciones: juegos para mejorar la experiencia de cada visita y facilitar conversaciones y contactos opcionales."
+    "title": "Stand | Experiencias y datos para ferias y activaciones",
+    "description": "Mejora la experiencia de cada visita y recopila datos de participación en ferias y activaciones con juegos de marca personalizables. Consulta resultados y analítica según tu plan."
   },
   "common": {
     "langSwitcher": "Idioma del sitio",
@@ -24,61 +24,80 @@
     "closeMenu": "Cerrar menú"
   },
   "hero": {
-    "kicker": "Juegos de marca para eventos",
-    "title1": "Haz que cada visita",
-    "title2": "se convierta en experiencia",
-    "subtitle": "Stand ayuda a marcas y agencias a activar sus espacios con juegos personalizables que invitan a participar, mejoran la experiencia del evento y pueden abrir conversaciones con contactos opcionales.",
+    "kicker": "Experiencias y datos para eventos",
+    "title1": "Mejora cada visita",
+    "title2": "y recoge datos útiles",
+    "subtitle": "Stand ayuda a marcas y agencias a mejorar la experiencia de sus ferias y activaciones con juegos personalizables que invitan a participar y recopilan datos de participación y resultados para entender cómo responde la audiencia.",
     "ctaCatalog": "Explorar experiencias",
     "ctaFree": "Probar gratis",
-    "microcopy": "Para ferias y activaciones. La captura de contactos es opcional.",
+    "microcopy": "Plug & play: activa tu juego con un enlace, un QR o una pantalla.",
     "visualAlt": "Pantallas táctiles horizontal y vertical para activaciones presenciales",
-    "visualCaption": "Pantallas para activaciones presenciales. El hardware se ofrece como servicio adicional.",
-    "proof": "{{count}} participantes en un piloto de ocio",
-    "visualLabel": "Tu marca. Su próximo juego.",
-    "chip1": "Participación",
-    "chip2": "Personalización",
-    "chip3": "Contactos opcionales"
+    "visualCaption": "Usa tu propia pantalla o alquila una con nosotros como servicio adicional.",
+    "proof": "+500 participantes",
+    "visualLabel": "Tu marca. Cada interacción cuenta.",
+    "chip1": "Experiencia",
+    "chip2": "Datos de participación"
   },
   "about": {
-    "kicker": "Una experiencia con propósito",
-    "title1": "Más que atraer miradas,",
-    "title2": "invita a participar",
-    "intro": "Para marcas y agencias en ferias y activaciones, Stand convierte un momento de paso en una experiencia de marca participativa: un juego para disfrutar y una oportunidad para iniciar una conversación.",
+    "kicker": "Dos pilares para tus eventos",
+    "title1": "Mejora la experiencia.",
+    "title2": "Recopila datos.",
+    "intro": "Stand ayuda a marcas y agencias a mejorar cada visita con experiencias participativas y a recopilar datos de juego y resultados para entender la respuesta del público.",
     "pillars": [
       {
-        "title": "Una experiencia para recordar",
-        "description": "Propón una dinámica clara y participativa que aporte un momento agradable a la visita y encaje con el ambiente de tu evento."
+        "title": "Mejora la experiencia de cada visita",
+        "description": "Ofrece una dinámica de marca personalizable que invite a participar y aporte un momento agradable en tu feria o activación."
       },
       {
-        "title": "Tu marca, dentro del juego",
-        "description": "Personaliza la experiencia visual y, según el plan, adapta también el contenido y las mecánicas a tu activación."
-      },
-      {
-        "title": "Conversaciones y contactos opcionales",
-        "description": "Si encaja con tu dinámica, activa formularios opcionales para participantes y consulta o exporta los resultados disponibles."
+        "title": "Recopila datos de participación",
+        "description": "Consulta los datos de las partidas y sus resultados. Según el plan, podrás exportarlos o añadir analítica postevento."
       }
     ],
-    "problemTitle": "Una visita puede pasar de largo",
-    "problemBody": "En una feria, muchas personas pasan por delante y la conversación puede quedarse en el stand. Una experiencia participativa ofrece un motivo para detenerse, disfrutar y empezar a conversar."
+    "problemTitle": "Crea una experiencia y conoce su respuesta",
+    "problemBody": "En una feria, no basta con atraer miradas: también importa ofrecer una experiencia que invite a participar y entender cómo responde el público. Stand reúne dinámicas de marca con datos de participación y resultados."
   },
   "howItWorks": {
     "kicker": "Cómo funciona",
-    "title": "De la idea a una experiencia participativa",
-    "subtitle": "Elige una dinámica, ajústala a tu marca y decide cómo quieres invitar a participar.",
+    "title": "Una experiencia mejor, datos para aprender",
+    "subtitle": "Crea una dinámica de marca, activa la experiencia a tu manera y consulta los datos que genera el juego.",
     "steps": [
       {
-        "title": "Elige el juego",
-        "description": "Escoge una experiencia del catálogo según el tipo de interacción que buscas para tu feria o activación."
+        "title": "Elige la dinámica",
+        "description": "Escoge un juego del catálogo según la experiencia que quieres ofrecer y el tipo de participación que quieres observar."
       },
       {
-        "title": "Adáptalo a tu marca",
-        "description": "Personaliza la imagen del juego. Para una propuesta a medida, puedes consultar las opciones de diseño y adaptación."
+        "title": "Adáptala a tu marca",
+        "description": "Personaliza la imagen y, según el plan, adapta también los contenidos y las mecánicas a tu activación."
       },
       {
-        "title": "Activa la participación",
-        "description": "Invita a las personas a jugar y, si lo necesitas, configura formularios opcionales para facilitar el seguimiento después del evento."
+        "title": "Activa y revisa resultados",
+        "description": "Invita a las personas a jugar y consulta o exporta los resultados disponibles según tu plan."
       }
-    ]
+    ],
+    "activation": {
+      "kicker": "Plug & play",
+      "title": "Activa tu juego como prefieras",
+      "description": "Desde un enlace hasta una pantalla en tu evento: elige la opción que mejor se adapte a tu espacio.",
+      "options": [
+        {
+          "title": "Comparte un enlace",
+          "description": "Envía el enlace del juego para que los participantes accedan desde su dispositivo."
+        },
+        {
+          "title": "Imprime un QR",
+          "description": "Coloca el código QR en tu espacio para que los visitantes lo escaneen y accedan al juego."
+        },
+        {
+          "title": "Usa tu pantalla",
+          "description": "Muestra la pantalla de inicio del juego en tu propia pantalla durante el evento."
+        },
+        {
+          "title": "Alquila una pantalla",
+          "description": "También puedes alquilar una pantalla con nosotros como servicio adicional."
+        }
+      ],
+      "contact": "Consultar alquiler de pantalla"
+    }
   },
   "clientLogos": {
     "kicker": "Una experiencia piloto",
@@ -100,7 +119,7 @@
     "title2": "activar tu espacio",
     "subtitle": "Juegos con mecánicas distintas para ferias y activaciones. Personaliza la experiencia visual para acercarla a tu marca.",
     "scrollHint": "Desliza para ver todas las experiencias",
-    "learnMore": "Consultar esta experiencia",
+    "tryGame": "Probar juego",
     "featuredLabel": "Para ferias y activaciones",
     "socialLabel": "Para conectar a las personas",
     "games": [
@@ -138,6 +157,11 @@
         "tag": "Contenido de marca",
         "title": "INFOCARDS",
         "description": "Presenta información en tarjetas visuales. Sube un PDF o imágenes para generar las tarjetas con IA."
+      },
+      {
+        "tag": "Precisión y habilidad",
+        "title": "STACK",
+        "description": "Apila bloques en un arcade 3D. Toca en el momento justo, encadena colocaciones perfectas y construye la torre más alta."
       }
     ]
   },
@@ -188,7 +212,7 @@
           "Jugadores ilimitados",
           "Personalización visual del juego",
           "Posibilidad de realizar sorteos",
-          "Formularios opcionales para participantes, configurables desde el panel",
+          "Datos de participación de las partidas",
           "Consulta y exportación básica de resultados"
         ]
       },
@@ -203,7 +227,7 @@
         ],
         "servicesTitle": "Servicios opcionales",
         "services": [
-          "Pantallas táctiles e instalaciones interactivas",
+          "Alquiler de pantallas táctiles e instalaciones interactivas",
           "Logística y transporte al evento",
           "Diseño visual personalizado",
           "Adaptación de contenidos y mecánicas de juego",
@@ -213,36 +237,6 @@
         ]
       }
     }
-  },
-  "faq": {
-    "kicker": "Preguntas frecuentes",
-    "title": "Lo que conviene saber",
-    "items": [
-      {
-        "question": "¿Qué es Stand?",
-        "answer": "Stand es una plataforma de juegos personalizables para marcas y agencias que preparan ferias y activaciones. Sus dinámicas invitan a participar y pueden ayudar a abrir conversaciones con visitantes."
-      },
-      {
-        "question": "¿Puedo recoger contactos de participantes?",
-        "answer": "El plan Event incluye formularios opcionales que se configuran desde el panel. Puedes decidir si la dinámica de tu evento los necesita; también hay consulta y exportación básica de resultados."
-      },
-      {
-        "question": "¿Puedo adaptar los juegos a mi marca?",
-        "answer": "Los planes incluyen opciones de personalización visual. Enterprise ofrece, como servicios opcionales, diseño personalizado y adaptación de contenidos o mecánicas."
-      },
-      {
-        "question": "¿Cuánto cuesta usar Stand en un evento?",
-        "answer": "Starter es gratis e incluye un juego activo y hasta 25 jugadores. Event cuesta 24 € por 24 horas o 99 € por 7 días, con pago único. Enterprise empieza en 99 €; los servicios opcionales se cotizan aparte."
-      },
-      {
-        "question": "¿Qué tipos de juegos hay?",
-        "answer": "El catálogo incluye retos de palabras, ruleta de premios o retos, pruebas de reflejos, juegos para conectar participantes, quizzes y tarjetas visuales de contenido."
-      },
-      {
-        "question": "¿Qué incluye una propuesta Enterprise?",
-        "answer": "Puedes consultar servicios opcionales como pantallas e instalaciones interactivas, logística, diseño, adaptación de contenidos, analítica postevento, personal o premios. El alcance y el precio se definen en la propuesta."
-      }
-    ]
   },
   "contact": {
     "kicker": "Contacto",
@@ -265,7 +259,7 @@
     "mailBodyMessage": "Mensaje"
   },
   "footer": {
-    "tagline": "Juegos de marca para ferias y activaciones.",
+    "tagline": "Experiencias interactivas y datos para ferias y activaciones.",
     "sections": "Explora",
     "email": "Email",
     "social": "Síguenos",

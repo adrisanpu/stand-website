@@ -8,7 +8,6 @@ import Pricing from './components/Pricing'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import HowItWorks from './components/HowItWorks'
-import FAQ from './components/FAQ'
 import MobileCTA from './components/MobileCTA'
 
 export default function App() {
@@ -23,7 +22,6 @@ export default function App() {
         <Catalog />
         <ClientLogos />
         <Pricing />
-        <FAQ />
         <Contact />
       </main>
       <Footer />

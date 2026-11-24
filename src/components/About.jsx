@@ -1,7 +1,7 @@
-import { Contact, MousePointer2, Paintbrush } from 'lucide-react'
+import { BarChart3, MousePointer2 } from 'lucide-react'
 import { useI18n } from '../i18n/useI18n.js'
 
-const ICONS = [MousePointer2, Paintbrush, Contact]
+const ICONS = [MousePointer2, BarChart3]
 
 export default function About() {
   const { messages } = useI18n()
@@ -20,7 +20,7 @@ export default function About() {
           <p className="mt-3 leading-relaxed text-brand-muted">{copy.problemBody}</p>
         </div>
       </div>
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
+      <div className="mt-12 grid gap-5 md:grid-cols-2">
         {copy.pillars.map((pillar, index) => {
           const Icon = ICONS[index]
           return (

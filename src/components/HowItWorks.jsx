@@ -1,4 +1,7 @@
+import { ArrowRight, Link2, Monitor, QrCode, ScreenShare } from 'lucide-react'
 import { useI18n } from '../i18n/useI18n.js'
+
+const ACTIVATION_ICONS = [Link2, QrCode, Monitor, ScreenShare]
 
 export default function HowItWorks() {
   const { messages } = useI18n()
@@ -21,6 +24,28 @@ export default function HowItWorks() {
             </li>
           ))}
         </ol>
+        <div className="mt-16 border-t border-brand-line pt-12">
+          <div className="max-w-2xl">
+            <p className="eyebrow">{copy.activation.kicker}</p>
+            <h3 className="section-title">{copy.activation.title}</h3>
+            <p className="body-copy mt-5">{copy.activation.description}</p>
+          </div>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {copy.activation.options.map((option, index) => {
+              const Icon = ACTIVATION_ICONS[index]
+              return (
+                <li key={option.title} className="rounded-card border border-brand-line bg-white p-6">
+                  <Icon size={24} className="text-brand-orange-dark" aria-hidden="true" />
+                  <h4 className="mt-4 font-display text-lg font-semibold">{option.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-brand-muted">{option.description}</p>
+                </li>
+              )
+            })}
+          </ul>
+          <a href="#contact" className="text-link mt-6 inline-flex">
+            {copy.activation.contact} <ArrowRight size={16} aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </section>
   )
