@@ -20,7 +20,10 @@ export default function GamePreviewDialog({ game, locale, onClose }) {
   if (!game) return null
 
   const closeLabel = locale === 'en' ? 'Close game preview' : 'Cerrar vista previa'
-  const source = `${APP_URL}/preview/${encodeURIComponent(game.previewType)}?lang=${locale}&embedded=1`
+  const previewAppUrl = game.previewType === 'BASKET'
+    ? import.meta.env.VITE_BASKET_APP_URL || APP_URL
+    : APP_URL
+  const source = `${previewAppUrl}/preview/${encodeURIComponent(game.previewType)}?lang=${locale}&embedded=1`
 
   return (
     <dialog

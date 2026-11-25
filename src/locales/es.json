@@ -162,6 +162,11 @@
         "tag": "Precisión y habilidad",
         "title": "STACK",
         "description": "Apila bloques en un arcade 3D. Toca en el momento justo, encadena colocaciones perfectas y construye la torre más alta."
+      },
+      {
+        "tag": "Puntería y habilidad",
+        "title": "BASKET",
+        "description": "Desliza para lanzar a una canasta en movimiento en un arcade 3D. Tienes 30 segundos y un intento para sumar puntos y subir en el ranking."
       }
     ]
   },

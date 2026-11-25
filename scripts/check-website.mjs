@@ -24,8 +24,16 @@ function compareTranslations(left, right, path = '') {
 }
 
 compareTranslations(es, en)
-assert.equal(es.catalog.games.length, 7)
 assert.deepEqual(es.catalog.games.map((game) => game.title), en.catalog.games.map((game) => game.title))
+const catalogEntries = [...read('src/components/Catalog.jsx').matchAll(/\{\s*index:\s*(\d+),\s*image:\s*'([^']+)'([^}]*)\}/g)]
+assert.equal(catalogEntries.length, es.catalog.games.length, 'Every translated game must have a catalog card')
+assert.equal(new Set(catalogEntries.map((entry) => entry[1])).size, catalogEntries.length, 'Catalog indexes must be unique')
+for (const [, index, , options] of catalogEntries) {
+  const game = es.catalog.games[Number(index)]
+  assert.ok(game, `Invalid catalog index: ${index}`)
+  assert.equal(options.match(/previewType:\s*'([^']+)'/)?.[1], game.title, `Wrong preview for ${game.title}`)
+}
+assert.ok(es.catalog.games.some((game) => game.title === 'BASKET'), 'BASKET must be available in the catalog')
 assert.equal(es.howItWorks.steps.length, 3)
 assert.equal(es.about.pillars.length, 3)
 
@@ -42,8 +50,8 @@ for (const component of components) {
   for (const [, asset] of source.matchAll(/['"](\/(?:images|clients)\/[^'"`]+)['"]/g)) {
     assert.ok(existsSync(join(root, 'public', asset.slice(1))), `Missing asset in ${component}: ${asset}`)
   }
-  for (const [, image] of source.matchAll(/image: '([^']+)'/g)) {
-    assert.ok(existsSync(join(root, 'public/images', `${image}.webp`)), `Missing game image: ${image}`)
+  for (const [, image, extension = 'webp'] of source.matchAll(/image: '([^']+)'(?:,\s*extension:\s*'([^']+)')?/g)) {
+    assert.ok(existsSync(join(root, 'public/images', `${image}.${extension}`)), `Missing game image: ${image}.${extension}`)
   }
   for (const [, key] of source.matchAll(/\bt\('([a-zA-Z]+\.[a-zA-Z.]+)'/g)) {
     assert.equal(typeof key.split('.').reduce((value, part) => value?.[part], es), 'string', `Missing translation in ${component}: ${key}`)

@@ -7,6 +7,7 @@ const GAMES = [
   { index: 1, image: 'ruleta-logo', previewType: 'RULET4', featured: true },
   { index: 2, image: 't1mer-logo', previewType: 'T1MER', featured: true },
   { index: 7, image: 'stack-logo', extension: 'png', previewType: 'STACK', featured: true },
+  { index: 8, image: 'basket-logo', previewType: 'BASKET', featured: true },
   { index: 0, image: 'l3tras-logo', previewType: 'L3TRAS', featured: true },
   { index: 6, image: 'infocards-logo', previewType: 'INFOCARDS', featured: true },
   { index: 3, image: 'empareja2-logo', previewType: 'EMPAREJA2', featured: false },

@@ -162,6 +162,11 @@
         "tag": "Precision and skill",
         "title": "STACK",
         "description": "Stack blocks in a 3D arcade game. Tap at the right moment, chain perfect placements, and build the tallest tower."
+      },
+      {
+        "tag": "Aim and skill",
+        "title": "BASKET",
+        "description": "Swipe to shoot at a moving hoop in a 3D arcade game. You have 30 seconds and one attempt to score points and climb the leaderboard."
       }
     ]
   },
